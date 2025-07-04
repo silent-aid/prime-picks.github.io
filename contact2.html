@@ -2,9 +2,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contact | Prime Picks</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Prime Picks</title>
   <style>
     :root {
       --primary: #ff3c3c;
@@ -14,24 +14,16 @@
       --border: #ff3c3c;
     }
     body {
+      margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: var(--background);
       color: var(--text);
-      margin: 0;
     }
     .topbar {
       background: var(--primary);
-      color: white;
       text-align: center;
       padding: 10px;
       font-weight: bold;
-      animation: scrollBar 15s linear infinite;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-    @keyframes scrollBar {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
     }
     header {
       text-align: center;
@@ -46,25 +38,41 @@
     }
     .container {
       max-width: 600px;
-      margin: auto;
+      margin: 40px auto;
+      background: var(--surface);
       padding: 30px;
+      border-radius: 10px;
+      border: 2px solid var(--border);
+      box-shadow: 0 0 20px rgba(255, 60, 60, 0.2);
     }
-    input, textarea, button {
+    h2 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: bold;
+    }
+    input, textarea {
       width: 100%;
-      padding: 12px;
-      margin: 10px 0;
+      padding: 10px;
+      border: 1px solid var(--border);
       border-radius: 5px;
-      border: none;
-    }
-    textarea {
-      resize: vertical;
-      min-height: 100px;
+      background: #222;
+      color: var(--text);
     }
     button {
       background: var(--primary);
       color: white;
-      font-weight: bold;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 20px;
       cursor: pointer;
+      font-weight: bold;
+      width: 100%;
     }
     footer {
       text-align: center;
@@ -75,7 +83,7 @@
   </style>
 </head>
 <body>
-  <div class="topbar">📩 Need Help? Contact Prime Picks Support Team Anytime!</div>
+  <div class="topbar">📞 Reach us for any help or questions — we usually respond within 24 hours!</div>
   <header>
     <h1>🛍️ Prime Picks</h1>
     <nav>
@@ -85,13 +93,23 @@
       <a href="refund.html">Refund</a>
     </nav>
   </header>
+
   <div class="container">
     <h2>Contact Us</h2>
-    <input type="text" placeholder="Your Name" required>
-    <input type="email" placeholder="Your Email" required>
-    <textarea placeholder="Your Message" required></textarea>
-    <button onclick="alert('Thank you! We will get back to you shortly.')">Send Message</button>
+    <form>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" placeholder="Your Name" required />
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" placeholder="your@email.com" required />
+
+      <label for="message">Your Message</label>
+      <textarea id="message" rows="5" placeholder="Type your query or feedback here..." required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
   </div>
+
   <footer>
     &copy; 2025 Prime Picks | Built by Yahya ❤️
   </footer>
