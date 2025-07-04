@@ -1,40 +1,137 @@
+<!-- cart3.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Cart | Prime Picks</title>
   <style>
-    :root { --primary: #ff3c3c; --background: #0f0f0f; --surface: #1a1a1a; --text: #ffffff; --border: #ff3c3c; }
-    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--background); color: var(--text); }
-    .topbar { background: var(--primary); padding: 10px; text-align: center; font-weight: bold; }
-    header { text-align: center; padding: 20px; border-bottom: 2px solid var(--border); }
-    nav a { color: var(--primary); margin: 0 15px; text-decoration: none; font-weight: bold; }
-    .container { padding: 40px 20px; max-width: 800px; margin: auto; }
-    .item { display: flex; justify-content: space-between; padding: 15px; background: var(--surface); border: 2px solid var(--border); border-radius: 10px; margin-bottom: 20px; }
-    .btn { background: var(--primary); padding: 8px 16px; color: white; border: none; border-radius: 5px; text-decoration: none; }
-    footer { text-align: center; padding: 15px; background: #111; margin-top: 40px; }
+    :root {
+      --primary: #ff3c3c;
+      --background: #0f0f0f;
+      --surface: #1a1a1a;
+      --text: #ffffff;
+      --border: #ff3c3c;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      margin: 0;
+    }
+    .topbar {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      border-bottom: 2px solid var(--border);
+    }
+    nav a {
+      color: var(--primary);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    .cart-item {
+      background: var(--surface);
+      padding: 20px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .cart-item img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
+    }
+    .cart-details {
+      flex: 1;
+      margin-left: 20px;
+    }
+    .qty-controls {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin-top: 10px;
+    }
+    .qty-controls button {
+      background: var(--primary);
+      border: none;
+      color: white;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <div class="topbar">🛒 Your Shopping Cart</div>
+  <div class="topbar">🛒 Items in Your Cart | Free Delivery On All Orders</div>
   <header>
     <h1>🛍️ Prime Picks</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="product2.html">Product</a>
+      <a href="product3.html">Product</a>
       <a href="contact2.html">Contact</a>
       <a href="refund.html">Refund</a>
     </nav>
   </header>
   <div class="container">
-    <div class="item">
-      <span>AirPods Pro 4 (1x)</span>
-      <span>₹999</span>
+    <div class="cart-item">
+      <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" alt="AirPods">
+      <div class="cart-details">
+        <h3>AirPods Pro 4</h3>
+        <p>Unit Price: ₹999</p>
+        <div class="qty-controls">
+          <button onclick="updateQty(-1)">−</button>
+          <span id="quantity">1</span>
+          <button onclick="updateQty(1)">+</button>
+        </div>
+      </div>
     </div>
-    <h3>Total: ₹999</h3>
-    <a href="checkout.html" class="btn">Proceed to Checkout</a>
+    <h3>Total: ₹<span id="total">999</span></h3>
+    <a href="checkout3.html" class="btn">Proceed to Checkout</a>
   </div>
-  <footer>&copy; 2025 Prime Picks | Built by Yahya ❤️</footer>
+  <footer>
+    &copy; 2025 Prime Picks | Built by Yahya ❤️
+  </footer>
+
+  <script>
+    let quantity = 1;
+    const unitPrice = 999;
+    function updateQty(change) {
+      quantity += change;
+      if (quantity < 1) quantity = 1;
+      document.getElementById('quantity').textContent = quantity;
+      document.getElementById('total').textContent = unitPrice * quantity;
+    }
+  </script>
 </body>
 </html>
