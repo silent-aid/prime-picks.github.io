@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Product | Prime Picks</title>
+  <title>Our Products | Prime Picks</title>
   <style>
     :root {
       --primary: #ff3c3c;
@@ -14,19 +14,20 @@
       --border: #ff3c3c;
     }
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: var(--background);
       color: var(--text);
+      margin: 0;
     }
     .topbar {
       background: var(--primary);
-      padding: 10px;
       color: white;
+      text-align: center;
+      padding: 10px;
       font-weight: bold;
+      animation: scrollBar 15s linear infinite;
       white-space: nowrap;
       overflow: hidden;
-      animation: scrollBar 15s linear infinite;
     }
     @keyframes scrollBar {
       0% { transform: translateX(100%); }
@@ -48,36 +49,63 @@
       margin: auto;
       padding: 20px;
     }
+    .product {
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 30px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(255, 60, 60, 0.3);
+    }
     .slider {
       display: flex;
       overflow-x: auto;
       gap: 15px;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
     .slider img {
-      height: 200px;
-      border-radius: 10px;
-      border: 2px solid var(--border);
-    }
-    .product {
-      background: var(--surface);
-      padding: 20px;
-      border: 2px solid var(--border);
-      border-radius: 10px;
-    }
-    .price {
-      color: var(--primary);
-      font-size: 24px;
-      margin-top: 10px;
+      height: 150px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
     }
     .btn {
       background: var(--primary);
-      padding: 10px 20px;
       color: white;
-      border: none;
-      cursor: pointer;
-      margin-top: 20px;
+      padding: 10px 20px;
+      text-decoration: none;
       border-radius: 5px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .stars svg {
+      width: 18px;
+      fill: gold;
+      vertical-align: middle;
+    }
+    .stock {
+      font-size: 0.9em;
+      color: #ccc;
+      margin: 5px 0;
+    }
+    .quantity {
+      margin-top: 10px;
+    }
+    select {
+      padding: 5px;
+      margin-left: 10px;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-radius: 5px;
+    }
+    .reviews {
+      font-size: 0.9em;
+      color: #aaa;
+      margin-top: 10px;
     }
     footer {
       text-align: center;
@@ -88,9 +116,9 @@
   </style>
 </head>
 <body>
-  <div class="topbar">🎧 Limited Time Offer: AirPods Pro 4 at ₹999 | Free Shipping + COD | Use Code: PRIME60 at Checkout!</div>
+  <div class="topbar">🔥 Flat ₹999 | Free Delivery Across India | Limited Stock Only!</div>
   <header>
-    <h1>🛍️ Prime Picks</h1>
+    <h1>🛍️ Prime Picks - Product Page</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="product2.html">Product</a>
@@ -99,31 +127,69 @@
     </nav>
   </header>
   <div class="container">
-    <div class="slider">
-      <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" alt="Slide 1">
-      <img src="https://m.media-amazon.com/images/I/31GYay3meDL._SX300_SY300_QL70_FMwebp_.jpg" alt="Slide 2">
-      <img src=https://m.media-amazon.com/images/I/21FP4bR2ziL._SY300_SX300_QL70_FMwebp_.jpg" alt="Slide 3">
-      <img src="https://m.media-amazon.com/images/I/61o8blsHYIL._SX679_.jpg" alt="Slide 4">
-    </div>
+
     <div class="product">
-      <h2>AirPods Pro 4 - Premium Clone</h2>
-      <p>🎧 High-performance true wireless earbuds with active noise cancellation, transparent mode, pop-up animation support, and touch controls. Crafted to look and feel like the original, these Pro 4 clones deliver excellent sound quality and comfort at a fraction of the cost.</p>
-      <p>💥 Features:
-        <ul>
-          <li>Bluetooth 5.1 connectivity</li>
-          <li>Wireless charging case with magnetic lid</li>
-          <li>Battery life: 3–4 hours music playback</li>
-          <li>In-ear sensor for auto play/pause</li>
-          <li>Comfort-fit ergonomic design</li>
-          <li>Premium clone – visually identical to Apple original</li>
-        </ul>
-      </p>
-      <p class="price">₹999 <del style="color:gray">₹2499</del> (60% OFF)</p>
-      <a href="cart3.html"><button class="btn">Add to Cart</button></a>
+      <div class="slider">
+        <img src="https://m.media-amazon.com/images/I/51o-QwmV3nL._SX522_.jpg" alt="AirPods">
+        <img src="https://m.media-amazon.com/images/I/71b2uADZSIL._SX522_.jpg" alt="AirPods">
+        <img src="https://m.media-amazon.com/images/I/51pBn8uFHNL._SX522_.jpg" alt="AirPods">
+        <img src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/6aa7c531-8466-4f59-baf6-183d843a5a56.__CR22,0,4053,2507_PT0_SX970_V1___.jpg" alt="AirPods">
+      </div>
+      <h2>AirPods Pro 4 Clone</h2>
+      <div class="stars">
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,18 10,15 4.5,18 6,12 1,7.5 7.5,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,18 10,15 4.5,18 6,12 1,7.5 7.5,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,18 10,15 4.5,18 6,12 1,7.5 7.5,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,18 10,15 4.5,18 6,12 1,7.5 7.5,7"/></svg>
+        <svg viewBox="0 0 20 20" style="fill:#333;"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,18 10,15 4.5,18 6,12 1,7.5 7.5,7"/></svg>
+      </div>
+      <p class="stock">Only <span id="stock1">12</span> units left!</p>
+      <p>✨ Premium replica of AirPods Pro 4 with high-quality sound, ANC, smart sensors, and instant pairing. Charging case and fast delivery included!</p>
+      <p><strong>MRP:</strong> ₹2499 <br> <strong>Offer:</strong> ₹999 with Free Shipping</p>
+      <div class="quantity">Qty: <select><option>1</option><option>2</option><option>3</option></select></div>
+      <a href="cart3.html" class="btn">Add to Cart</a>
+      <div class="reviews">🗨️ “Amazing sound quality at this price. Would buy again!” – Amaan</div>
     </div>
+
+    <div class="product">
+      <div class="slider">
+        <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRdVSCRKO0QGvuUzJIT2sSHOZGBgxTb1JHL1BCy95-pYrPXrgtjcFfgz3-G6Uo5K2i-VfR4K8kVS12QRx0c8y81IB6uungQvYeT7kAiUAbWEFh1xXPsM_VbLA" alt="Cable Organizer">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRbL1pxMm8JGtX3d_eC8IBKwVWu5ytDMLutdOjtW_CGT71SI20SwPrfBahhJ5Jr4mFGo2cF4djprR98QTle9CnO42eo7CdHY7E12YhsFD8" alt="Cable Organizer">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcRbL1pxMm8JGtX3d_eC8IBKwVWu5ytDMLutdOjtW_CGT71SI20SwPrfBahhJ5Jr4mFGo2cF4djprR98QTle9CnO42eo7CdHY7E12YhsFD8" alt="Cable Organizer">
+        <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQb9eu5Oqs2oBCcz_GVqSZ748sH2cmv8JW_vyc7tK9rBmvLwSXttbSETphZu8HUtEtKjQCKPh2FJRHdBEq1gjlzZgaBTZ3tuRmB8BSRdx8" alt="Cable Organizer">
+      </div>
+      <h2>Cable Organizer Clip Set (10 pcs)</h2>
+      <div class="stars">
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,18 10,15 4.5,18 6,12 1,7.5 7.5,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,18 10,15 4.5,18 6,12 1,7.5 7.5,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,18 10,15 4.5,18 6,12 1,7.5 7.5,7"/></svg>
+        <svg viewBox="0 0 20 20"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,18 10,15 4.5,18 6,12 1,7.5 7.5,7"/></svg>
+        <svg viewBox="0 0 20 20" style="fill:#333;"><polygon points="10,1 12.5,7 19,7.5 14,12 15.5,18 10,15 4.5,18 6,12 1,7.5 7.5,7"/></svg>
+      </div>
+      <p class="stock">Only <span id="stock2">7</span> left in stock!</p>
+      <p>🔌 Neat & tangle-free desks using silicone cable holders. Stick anywhere to manage wires easily. Set of 10 reusable clips!</p>
+      <p><strong>MRP:</strong> ₹799 <br> <strong>Offer:</strong> ₹399 with Free Shipping</p>
+      <div class="quantity">Qty: <select><option>1</option><option>2</option><option>3</option></select></div>
+      <a href="cart3.html" class="btn">Add to Cart</a>
+      <div class="reviews">🗨️ “No more mess! My desk looks so clean now.” – Zara</div>
+    </div>
+
   </div>
   <footer>
     &copy; 2025 Prime Picks | Built by Yahya ❤️
   </footer>
+
+  <script>
+    // Simulate real-time stock decrease
+    const stock1 = document.getElementById("stock1");
+    const stock2 = document.getElementById("stock2");
+    let count1 = parseInt(stock1.textContent);
+    let count2 = parseInt(stock2.textContent);
+    setInterval(() => {
+      if (count1 > 1) stock1.textContent = --count1;
+      if (count2 > 1) stock2.textContent = --count2;
+    }, 15000); // every 15 seconds
+  </script>
+
 </body>
 </html>
