@@ -2,47 +2,45 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product | Prime Picks</title>
   <style>
-    :root { --primary: #ff3c3c; --background: #121212; --surface: #1e1e1e; --text: #ffffff; --accent: #ff3c3c; --border: #ff3c3c; }
-    body { font-family: 'Segoe UI', sans-serif; background-color: var(--background); color: var(--text); margin: 0; padding: 0; }
-    .topbar { background-color: var(--accent); color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 14px; }
-    header { background-color: var(--surface); padding: 20px; text-align: center; border-bottom: 2px solid var(--border); }
-    nav { margin-top: 10px; }
-    nav a { color: var(--accent); margin: 0 15px; text-decoration: none; font-weight: bold; }
-    .container { max-width: 800px; margin: 40px auto; background-color: var(--surface); padding: 30px; border-radius: 10px; border: 2px solid var(--border); }
-    .product-imgs img { width: 100%; border-radius: 10px; border: 2px solid var(--border); margin-bottom: 15px; }
-    .price { color: var(--accent); font-size: 24px; font-weight: bold; margin: 15px 0; }
+    :root { --primary: #ff3c3c; --background: #0f0f0f; --surface: #1a1a1a; --text: #ffffff; --border: #ff3c3c; }
+    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--background); color: var(--text); }
+    .topbar { background: var(--primary); padding: 10px; text-align: center; font-weight: bold; }
+    header { text-align: center; padding: 20px; border-bottom: 2px solid var(--border); }
+    nav a { color: var(--primary); margin: 0 15px; text-decoration: none; font-weight: bold; }
+    .container { padding: 40px 20px; max-width: 1000px; margin: auto; }
+    .product-box { display: flex; flex-wrap: wrap; gap: 20px; background: var(--surface); padding: 20px; border: 2px solid var(--border); border-radius: 10px; }
+    .product-box img { width: 100%; max-width: 300px; border-radius: 10px; }
+    .details { flex: 1; }
+    .price { font-size: 24px; color: var(--primary); margin-top: 10px; }
+    .btn { background: var(--primary); padding: 10px 20px; color: white; border: none; cursor: pointer; margin-top: 20px; border-radius: 5px; }
+    footer { text-align: center; padding: 15px; background: #111; margin-top: 40px; }
   </style>
 </head>
 <body>
-
-  <div class="topbar">🚚 Free Delivery All Over India</div>
-
+  <div class="topbar">🚚 Free Delivery All Over India | Limited Time Offer!</div>
   <header>
     <h1>🛍️ Prime Picks</h1>
     <nav>
-      <a href="index.html">Home</a> |
-      <a href="product2.html">Product</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="refund.html">Refund Policy</a>
+      <a href="index.html">Home</a>
+      <a href="product2.html">Product</a>
+      <a href="contact2.html">Contact</a>
+      <a href="refund.html">Refund</a>
     </nav>
   </header>
-
   <div class="container">
-    <h2>Apple AirPods Pro 4 (Premium Clone)</h2>
-    <div class="product-imgs">
-      <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" alt="AirPods 1">
-      <img src="https://m.media-amazon.com/images/I/71ZlBE2sKYL._AC_SL1500_.jpg" alt="AirPods 2">
-      <img src="https://m.media-amazon.com/images/I/61nN4fK3uaL._AC_SL1500_.jpg" alt="AirPods 3">
-      <img src="https://m.media-amazon.com/images/I/71l1+2AvXTL._AC_SL1500_.jpg" alt="AirPods 4">
+    <div class="product-box">
+      <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" alt="AirPods Pro 4">
+      <div class="details">
+        <h2>Apple AirPods Pro 4 (Premium Clone)</h2>
+        <p>Experience high-quality sound, noise cancellation, and stylish design at an unbeatable price.</p>
+        <p class="price">₹999</p>
+        <a href="cart.html"><button class="btn">Add to Cart</button></a>
+      </div>
     </div>
-    <p class="price">Only ₹999</p>
-    <p>Our Apple AirPods Pro 4 are a premium clone offering the same sleek design, noise cancellation, 
-       pop-up pairing animation, touch controls, and a long battery life – all at an unbelievable price.</p>
-    <p>Perfect for music lovers, gym enthusiasts, or remote work warriors.</p>
   </div>
-
+  <footer>&copy; 2025 Prime Picks | Built by Yahya ❤️</footer>
 </body>
 </html>
