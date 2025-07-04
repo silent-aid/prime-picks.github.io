@@ -1,0 +1,60 @@
+<!-- thankyou3.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thank You | Prime Picks</title>
+  <style>
+    :root {
+      --primary: #ff3c3c;
+      --background: #0f0f0f;
+      --surface: #1a1a1a;
+      --text: #ffffff;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+    }
+    .message {
+      background: var(--surface);
+      padding: 40px;
+      border: 2px solid var(--primary);
+      border-radius: 10px;
+      animation: fadeIn 1s ease-in;
+    }
+    h1 {
+      color: var(--primary);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: var(--primary);
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="message">
+    <h1>🎉 Thank You for Your Order!</h1>
+    <p>Your order has been successfully placed. We’ll notify you when it’s shipped.</p>
+    <p>Feel free to reach out if you have any questions or concerns.</p>
+    <a href="index.html" class="btn">Return to Home</a>
+  </div>
+</body>
+</html>
