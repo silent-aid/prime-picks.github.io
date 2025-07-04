@@ -1,46 +1,129 @@
+<!-- product3.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Product | Prime Picks</title>
   <style>
-    :root { --primary: #ff3c3c; --background: #0f0f0f; --surface: #1a1a1a; --text: #ffffff; --border: #ff3c3c; }
-    body { margin: 0; font-family: 'Segoe UI', sans-serif; background: var(--background); color: var(--text); }
-    .topbar { background: var(--primary); padding: 10px; text-align: center; font-weight: bold; }
-    header { text-align: center; padding: 20px; border-bottom: 2px solid var(--border); }
-    nav a { color: var(--primary); margin: 0 15px; text-decoration: none; font-weight: bold; }
-    .container { padding: 40px 20px; max-width: 1000px; margin: auto; }
-    .product-box { display: flex; flex-wrap: wrap; gap: 20px; background: var(--surface); padding: 20px; border: 2px solid var(--border); border-radius: 10px; }
-    .product-box img { width: 100%; max-width: 300px; border-radius: 10px; }
-    .details { flex: 1; }
-    .price { font-size: 24px; color: var(--primary); margin-top: 10px; }
-    .btn { background: var(--primary); padding: 10px 20px; color: white; border: none; cursor: pointer; margin-top: 20px; border-radius: 5px; }
-    footer { text-align: center; padding: 15px; background: #111; margin-top: 40px; }
+    :root {
+      --primary: #ff3c3c;
+      --background: #0f0f0f;
+      --surface: #1a1a1a;
+      --text: #ffffff;
+      --border: #ff3c3c;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+    .topbar {
+      background: var(--primary);
+      padding: 10px;
+      color: white;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: scrollBar 15s linear infinite;
+    }
+    @keyframes scrollBar {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      border-bottom: 2px solid var(--border);
+    }
+    nav a {
+      color: var(--primary);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .slider {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+    .slider img {
+      height: 200px;
+      border-radius: 10px;
+      border: 2px solid var(--border);
+    }
+    .product {
+      background: var(--surface);
+      padding: 20px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+    }
+    .price {
+      color: var(--primary);
+      font-size: 24px;
+      margin-top: 10px;
+    }
+    .btn {
+      background: var(--primary);
+      padding: 10px 20px;
+      color: white;
+      border: none;
+      cursor: pointer;
+      margin-top: 20px;
+      border-radius: 5px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <div class="topbar">🚚 Free Delivery All Over India | Limited Time Offer!</div>
+  <div class="topbar">🎧 Limited Time Offer: AirPods Pro 4 at ₹999 | Free Shipping + COD | Use Code: PRIME60 at Checkout!</div>
   <header>
     <h1>🛍️ Prime Picks</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="product2.html">Product</a>
+      <a href="product3.html">Product</a>
       <a href="contact2.html">Contact</a>
       <a href="refund.html">Refund</a>
     </nav>
   </header>
   <div class="container">
-    <div class="product-box">
-      <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" alt="AirPods Pro 4">
-      <div class="details">
-        <h2>Apple AirPods Pro 4 (Premium Clone)</h2>
-        <p>Experience high-quality sound, noise cancellation, and stylish design at an unbeatable price.</p>
-        <p class="price">₹999</p>
-        <a href="cart3.html"><button class="btn">Add to Cart</button></a>
-      </div>
+    <div class="slider">
+      <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" alt="Slide 1">
+      <img src="https://m.media-amazon.com/images/I/31GYay3meDL._SX300_SY300_QL70_FMwebp_.jpg" alt="Slide 2">
+      <img src=https://m.media-amazon.com/images/I/715J6Hx8xyL._SX679_.jpg" alt="Slide 3">
+      <img src="https://m.media-amazon.com/images/I/61o8blsHYIL._SX679_.jpg" alt="Slide 4">
+    </div>
+    <div class="product">
+      <h2>AirPods Pro 4 - Premium Clone</h2>
+      <p>🎧 High-performance true wireless earbuds with active noise cancellation, transparent mode, pop-up animation support, and touch controls. Crafted to look and feel like the original, these Pro 4 clones deliver excellent sound quality and comfort at a fraction of the cost.</p>
+      <p>💥 Features:
+        <ul>
+          <li>Bluetooth 5.1 connectivity</li>
+          <li>Wireless charging case with magnetic lid</li>
+          <li>Battery life: 3–4 hours music playback</li>
+          <li>In-ear sensor for auto play/pause</li>
+          <li>Comfort-fit ergonomic design</li>
+          <li>Premium clone – visually identical to Apple original</li>
+        </ul>
+      </p>
+      <p class="price">₹999 <del style="color:gray">₹2499</del> (60% OFF)</p>
+      <a href="cart3.html"><button class="btn">Add to Cart</button></a>
     </div>
   </div>
-  <footer>&copy; 2025 Prime Picks | Built by Yahya ❤️</footer>
+  <footer>
+    &copy; 2025 Prime Picks | Built by Yahya ❤️
+  </footer>
 </body>
 </html>
