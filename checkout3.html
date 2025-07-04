@@ -1,3 +1,4 @@
+<!-- checkout3.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,25 +6,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Checkout | Prime Picks</title>
   <style>
-    :root { --primary: #ff3c3c; --background: #0f0f0f; --surface: #1a1a1a; --text: #ffffff; --border: #ff3c3c; }
-    body { font-family: 'Segoe UI', sans-serif; background: var(--background); color: var(--text); margin: 0; }
-    .topbar, footer { background: var(--primary); text-align: center; padding: 10px; font-weight: bold; }
-    .container { max-width: 600px; margin: auto; padding: 30px; background: var(--surface); border: 2px solid var(--border); border-radius: 10px; }
-    input, button { width: 100%; padding: 12px; margin: 10px 0; border-radius: 5px; border: none; }
-    button { background: var(--primary); color: white; font-weight: bold; cursor: pointer; }
+    :root {
+      --primary: #ff3c3c;
+      --background: #0f0f0f;
+      --surface: #1a1a1a;
+      --text: #ffffff;
+      --border: #ff3c3c;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      margin: 0;
+    }
+    .topbar, footer {
+      background: var(--primary);
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      border-bottom: 2px solid var(--border);
+    }
+    nav a {
+      color: var(--primary);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+      background: var(--surface);
+      border: 2px solid var(--border);
+      border-radius: 10px;
+    }
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+    button {
+      background: var(--primary);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
   </style>
 </head>
 <body>
-  <div class="topbar">📦 Secure Checkout</div>
+  <div class="topbar">📦 Secure Checkout | Free Shipping Across India</div>
+  <header>
+    <h1>🛍️ Prime Picks</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product2.html">Product</a>
+      <a href="contact2.html">Contact</a>
+      <a href="refund.html">Refund</a>
+    </nav>
+  </header>
   <div class="container">
     <h2>Shipping Information</h2>
     <input type="text" placeholder="Full Name" required>
     <input type="email" placeholder="Email Address" required>
-    <input type="text" placeholder="Full Address" required>
+    <input type="text" placeholder="Phone Number" required>
+    <input type="text" placeholder="Shipping Address" required>
     <input type="text" placeholder="City & State" required>
     <input type="text" placeholder="Pincode" required>
-    <button onclick="window.location.href='success.html'">Place Order</button>
+    <button onclick="alert('Order Placed Successfully!')">Place Order</button>
   </div>
-  <footer>&copy; 2025 Prime Picks | Built by Yahya ❤️</footer>
+  <footer>
+    &copy; 2025 Prime Picks | Built by Yahya ❤️
+  </footer>
 </body>
 </html>
