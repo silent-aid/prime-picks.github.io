@@ -1,40 +1,99 @@
+<!-- contact2.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Prime Picks</title>
   <style>
-    :root { --primary: #ff3c3c; --background: #121212; --surface: #1e1e1e; --text: #ffffff; --accent: #ff3c3c; --border: #ff3c3c; }
-    body { font-family: 'Segoe UI', sans-serif; background-color: var(--background); color: var(--text); margin: 0; padding: 0; }
-    .topbar { background-color: var(--accent); color: white; text-align: center; padding: 10px; font-weight: bold; font-size: 14px; }
-    header { background-color: var(--surface); padding: 20px; text-align: center; border-bottom: 2px solid var(--border); }
-    nav { margin-top: 10px; }
-    nav a { color: var(--accent); margin: 0 15px; text-decoration: none; font-weight: bold; }
-    .container { max-width: 800px; margin: 40px auto; background-color: var(--surface); padding: 30px; border-radius: 10px; border: 2px solid var(--border); }
-    a { color: var(--accent); }
+    :root {
+      --primary: #ff3c3c;
+      --background: #0f0f0f;
+      --surface: #1a1a1a;
+      --text: #ffffff;
+      --border: #ff3c3c;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
+      margin: 0;
+    }
+    .topbar {
+      background: var(--primary);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      animation: scrollBar 15s linear infinite;
+      white-space: nowrap;
+      overflow: hidden;
+    }
+    @keyframes scrollBar {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      border-bottom: 2px solid var(--border);
+    }
+    nav a {
+      color: var(--primary);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 30px;
+    }
+    input, textarea, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+    button {
+      background: var(--primary);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-
-  <div class="topbar">🚚 Free Delivery All Over India</div>
-
+  <div class="topbar">📩 Need Help? Contact Prime Picks Support Team Anytime!</div>
   <header>
     <h1>🛍️ Prime Picks</h1>
     <nav>
-      <a href="index.html">Home</a> |
-      <a href="product.html">Product</a> |
-      <a href="contact.html">Contact</a> |
-      <a href="refund.html">Refund Policy</a>
+      <a href="index.html">Home</a>
+      <a href="product2.html">Product</a>
+      <a href="contact2.html">Contact</a>
+      <a href="refund.html">Refund</a>
     </nav>
   </header>
-
   <div class="container">
     <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:support@primepicks.store">support@primepicks.store</a></p>
-    <p>Phone: +91-9876543210</p>
-    <p>Instagram: <a href="https://instagram.com/primepicks">@primepicks</a></p>
+    <input type="text" placeholder="Your Name" required>
+    <input type="email" placeholder="Your Email" required>
+    <textarea placeholder="Your Message" required></textarea>
+    <button onclick="alert('Thank you! We will get back to you shortly.')">Send Message</button>
   </div>
-
+  <footer>
+    &copy; 2025 Prime Picks | Built by Yahya ❤️
+  </footer>
 </body>
 </html>
