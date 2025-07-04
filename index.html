@@ -1,3 +1,4 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,20 +8,26 @@
   <style>
     :root {
       --primary: #ff3c3c;
-      --background: #0f0f0f;
+      --background: #0c0c0c;
       --surface: #1a1a1a;
       --text: #ffffff;
-      --border: #ff3c3c;
+      --accent: #fa5252;
+      --shadow: rgba(255, 60, 60, 0.3);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
       background: var(--background);
       color: var(--text);
+      line-height: 1.6;
     }
     .topbar {
       background: var(--primary);
-      padding: 10px;
+      padding: 12px;
       text-align: center;
       font-weight: bold;
       overflow: hidden;
@@ -33,60 +40,113 @@
     }
     header {
       text-align: center;
-      padding: 20px;
-      border-bottom: 2px solid var(--border);
+      padding: 25px 20px;
+      border-bottom: 2px solid var(--primary);
+      background: #111;
     }
     nav a {
-      color: var(--primary);
-      margin: 0 15px;
+      color: var(--accent);
+      margin: 0 18px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: white;
     }
     .container {
-      text-align: center;
       padding: 40px 20px;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: auto;
     }
     .hero {
       display: flex;
       overflow-x: auto;
       gap: 20px;
-      padding: 20px 0;
+      padding: 30px 0;
       justify-content: center;
     }
     .hero img {
-      height: 200px;
-      border-radius: 10px;
-      border: 2px solid var(--border);
+      height: 220px;
+      border-radius: 14px;
+      border: 2px solid var(--primary);
+      box-shadow: 0 0 18px var(--shadow);
+      transition: transform 0.3s;
+    }
+    .hero img:hover {
+      transform: scale(1.05);
+    }
+    h2 {
+      color: var(--accent);
+      font-size: 28px;
+      margin-top: 25px;
+      text-shadow: 0 0 4px var(--primary);
+    }
+    p {
+      font-size: 17px;
+      margin: 20px 0;
+      max-width: 800px;
+      margin-left: auto;
+      margin-right: auto;
     }
     .cta {
       display: inline-block;
       background: var(--primary);
       color: #fff;
-      padding: 12px 24px;
-      border-radius: 5px;
+      padding: 14px 30px;
+      border-radius: 8px;
       margin-top: 20px;
       text-decoration: none;
       font-weight: bold;
+      box-shadow: 0 0 10px var(--shadow);
+      transition: background 0.3s;
+    }
+    .cta:hover {
+      background: #e52b2b;
     }
     .features {
-      margin-top: 40px;
-      text-align: left;
+      margin-top: 60px;
+      background: var(--surface);
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 60, 60, 0.1);
     }
     .features h3 {
       color: var(--primary);
-      margin-bottom: 10px;
+      margin-bottom: 25px;
+      font-size: 24px;
+      text-align: center;
     }
-    .features ul {
-      list-style: square;
-      padding-left: 20px;
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .feature-box {
+      background: #111;
+      border: 1px solid #333;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 0 12px rgba(255, 60, 60, 0.05);
+      transition: transform 0.3s;
+    }
+    .feature-box:hover {
+      transform: translateY(-5px);
+    }
+    .feature-box span {
+      display: block;
+      font-size: 18px;
+      color: var(--accent);
+      margin-bottom: 8px;
     }
     footer {
       text-align: center;
-      padding: 15px;
+      padding: 20px;
       background: #111;
-      margin-top: 40px;
+      margin-top: 60px;
+      font-size: 14px;
     }
   </style>
 </head>
@@ -94,7 +154,7 @@
   <div class="topbar">🔥 Big Sale! Use code <strong>PRIME60</strong> for up to 60% OFF | Free Shipping on All Orders 🚚</div>
 
   <header>
-    <h1>🛍️ Prime Picks</h1>
+    <h1 style="color: white; font-size: 32px;">🛍️ Prime Picks</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="product2.html">Product</a>
@@ -105,26 +165,27 @@
 
   <div class="container">
     <div class="hero">
-      <img src="data:image/png;base64,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" alt="AirPods 1">
-      <img src="https://img.freepik.com/premium-vector/free-delivery-icon-free-delivery-service-logo_349999-2344.jpg" alt="AirPods 2">
-      <img src="https://img.freepik.com/premium-vector/refund-icon_1134231-1931.jpg" alt="AirPods 3">
-      <img src="https://static.vecteezy.com/system/resources/previews/035/164/248/non_2x/truck-and-flames-silhouette-fast-delivery-icon-design-express-fast-moving-shipping-delivery-logo-illustration-vector.jpg" alt="AirPods 4">
+      <img src="data:image/png;base64,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" alt="AirPods">
+      <img src="https://img.freepik.com/premium-vector/free-delivery-icon-free-delivery-service-logo_349999-2344.jpg" alt="Free Delivery">
+      <img src="https://img.freepik.com/premium-vector/refund-icon_1134231-1931.jpg" alt="Refund">
+      <img src="https://static.vecteezy.com/system/resources/previews/035/164/248/non_2x/truck-and-flames-silhouette-fast-delivery-icon-design-express-fast-moving-shipping-delivery-logo-illustration-vector.jpg" alt="Fast Shipping">
     </div>
 
     <h2>Premium Tech You Can Trust</h2>
-    <p>Explore best-in-class wireless earbuds, desk organizers, and life-saving accessories. Top quality meets unbeatable pricing!</p>
+    <p>Explore best-in-class wireless earbuds, desk organizers, and life-saving accessories. Our team tests every product to make sure you get amazing quality with unbeatable prices — every time you shop with us.</p>
 
     <a href="product2.html" class="cta">Shop Now</a>
 
     <div class="features">
       <h3>Why Choose Prime Picks?</h3>
-      <ul>
-        <li>🚀 Fast & Free Delivery Across India</li>
-        <li>💯 High-Quality Clone Gadgets Tested by Experts</li>
-        <li>🧾 Easy Checkout & Multiple Payment Options</li>
-        <li>🔁 Hassle-Free Refund Guarantee</li>
-        <li>🛠 Real Customer Reviews & Support</li>
-      </ul>
+      <div class="features-grid">
+        <div class="feature-box"><span>🚀</span>Fast & Free Delivery Across India</div>
+        <div class="feature-box"><span>💯</span>High-Quality Clone Gadgets Tested by Experts</div>
+        <div class="feature-box"><span>🧾</span>Easy Checkout & Multiple Payment Options</div>
+        <div class="feature-box"><span>🔁</span>Hassle-Free Refund Guarantee</div>
+        <div class="feature-box"><span>🛠</span>Real Customer Reviews & 24/7 Support</div>
+        <div class="feature-box"><span>🛍</span>Trusted by 10,000+ Happy Shoppers</div>
+      </div>
     </div>
   </div>
 
