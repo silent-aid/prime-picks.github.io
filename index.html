@@ -13,33 +13,123 @@
       --border: #ff3c3c;
     }
     body {
-      margin: 0; font-family: 'Segoe UI', sans-serif;
-      background: var(--background); color: var(--text);
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
     }
-    .topbar { background: var(--primary); padding: 10px; text-align: center; font-weight: bold; }
-    header { text-align: center; padding: 20px; border-bottom: 2px solid var(--border); }
-    nav a { color: var(--primary); margin: 0 15px; text-decoration: none; font-weight: bold; }
-    .container { text-align: center; padding: 60px 20px; max-width: 800px; margin: auto; }
-    .cta { display: inline-block; background: var(--primary); color: #fff; padding: 12px 24px; border-radius: 5px; margin-top: 20px; text-decoration: none; }
-    footer { text-align: center; padding: 15px; background: #111; margin-top: 40px; }
+    .topbar {
+      background: var(--primary);
+      padding: 10px;
+      text-align: center;
+      font-weight: bold;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: scrollText 15s linear infinite;
+    }
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+      border-bottom: 2px solid var(--border);
+    }
+    nav a {
+      color: var(--primary);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      text-align: center;
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .hero {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 20px 0;
+      justify-content: center;
+    }
+    .hero img {
+      height: 200px;
+      border-radius: 10px;
+      border: 2px solid var(--border);
+    }
+    .cta {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 5px;
+      margin-top: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .features {
+      margin-top: 40px;
+      text-align: left;
+    }
+    .features h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    .features ul {
+      list-style: square;
+      padding-left: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 15px;
+      background: #111;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
-  <div class="topbar">🚚 Free Delivery All Over India | Limited Time Offer!</div>
+  <div class="topbar">🔥 Big Sale! Use code <strong>PRIME60</strong> for up to 60% OFF | Free Shipping on All Orders 🚚</div>
+
   <header>
     <h1>🛍️ Prime Picks</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="product2.html">Product</a>
+      <a href="product3.html">Product</a>
       <a href="contact2.html">Contact</a>
       <a href="refund.html">Refund</a>
     </nav>
   </header>
+
   <div class="container">
-    <h2>Discover Premium Tech Accessories</h2>
-    <p>We bring top-tier gadgets like AirPods Pro 4 to your doorstep with trusted quality and free shipping!</p>
-    <a href="product.html" class="cta">Shop Now</a>
+    <div class="hero">
+      <img src="https://i.imgur.com/wd9aYPB.jpg" alt="AirPods 1">
+      <img src="https://i.imgur.com/6kIxzSp.jpg" alt="AirPods 2">
+      <img src="https://i.imgur.com/nUjZaPo.jpg" alt="AirPods 3">
+      <img src="https://i.imgur.com/KkLgJQ5.jpg" alt="AirPods 4">
+    </div>
+
+    <h2>Premium Tech You Can Trust</h2>
+    <p>Explore best-in-class wireless earbuds, desk organizers, and life-saving accessories. Top quality meets unbeatable pricing!</p>
+
+    <a href="product3.html" class="cta">Shop Now</a>
+
+    <div class="features">
+      <h3>Why Choose Prime Picks?</h3>
+      <ul>
+        <li>🚀 Fast & Free Delivery Across India</li>
+        <li>💯 High-Quality Clone Gadgets Tested by Experts</li>
+        <li>🧾 Easy Checkout & Multiple Payment Options</li>
+        <li>🔁 Hassle-Free Refund Guarantee</li>
+        <li>🛠 Real Customer Reviews & Support</li>
+      </ul>
+    </div>
   </div>
-  <footer>&copy; 2025 Prime Picks | Built by Yahya ❤️</footer>
+
+  <footer>
+    &copy; 2025 Prime Picks | Built by Yahya ❤️
+  </footer>
 </body>
 </html>
