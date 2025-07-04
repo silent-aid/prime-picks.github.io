@@ -1,16 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Prime Picks</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Home | Prime Picks</title>
+  <style>
+    :root {
+      --primary: #ff3c3c;
+      --background: #121212;
+      --surface: #1e1e1e;
+      --text: #ffffff;
+      --accent: #ff3c3c;
+      --border: #ff3c3c;
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: var(--background);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+    }
+    .topbar {
+      background-color: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    header {
+      background-color: var(--surface);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 2px solid var(--border);
+    }
+    nav {
+      margin-top: 10px;
+    }
+    nav a {
+      color: var(--accent);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      background-color: var(--surface);
+      padding: 30px;
+      border-radius: 10px;
+      border: 2px solid var(--border);
+    }
+    .btn-link {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
+
+  <div class="topbar">🚚 Free Delivery </div>
+
   <header>
     <h1>🛍️ Prime Picks</h1>
-    <p>Top tech picks under budget</p>
+    <nav>
+      <a href="index.html">Home</a> |
+      <a href="product.html">Product</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="refund.html">Refund Policy</a>
+    </nav>
   </header>
-  <div id="product-container"></div>
-  <script src="script.js"></script>
-</body>
-</html>
+
+  <div class="container">
+    <h2>Welcome to Prime Picks</h2>
+    <p>Discover premium-quality tech at unbeatable prices. Trusted by over 10,000 customers across India.</p>
+    <p><a class="btn-link" href="product.html">Check out ou
