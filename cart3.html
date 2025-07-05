@@ -2,8 +2,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Your Cart | Prime Picks</title>
   <style>
     :root {
@@ -19,17 +19,11 @@
       color: var(--text);
       margin: 0;
     }
-    .topbar {
-      background: var(--primary);
-      color: white;
-      text-align: center;
-      padding: 10px;
-      font-weight: bold;
-    }
     header {
-      text-align: center;
+      background: var(--background);
       padding: 20px;
-      border-bottom: 2px solid var(--border);
+      text-align: center;
+      border-bottom: 2px solid var(--primary);
     }
     nav a {
       color: var(--primary);
@@ -38,100 +32,96 @@
       font-weight: bold;
     }
     .container {
-      max-width: 800px;
+      max-width: 1000px;
       margin: auto;
-      padding: 20px;
+      padding: 30px 20px;
+    }
+    h2 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 30px;
     }
     .cart-item {
       background: var(--surface);
       padding: 20px;
-      border: 2px solid var(--border);
-      border-radius: 10px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       margin-bottom: 20px;
+      border-radius: 10px;
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 20px;
     }
     .cart-item img {
-      width: 80px;
-      height: 80px;
+      height: 100px;
       border-radius: 10px;
     }
-    .cart-details {
+    .item-details {
       flex: 1;
-      margin-left: 20px;
     }
-    .qty-controls {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      margin-top: 10px;
+    .item-details h4 {
+      margin: 0;
     }
-    .qty-controls button {
-      background: var(--primary);
-      border: none;
-      color: white;
-      padding: 5px 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-    .btn {
+    .checkout-btn {
+      display: block;
       background: var(--primary);
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
+      text-align: center;
       text-decoration: none;
-      border-radius: 5px;
-      display: inline-block;
-      margin-top: 10px;
+      border-radius: 8px;
+      margin: 30px auto;
+      width: fit-content;
+      font-weight: bold;
+    }
+    .checkout-btn:hover {
+      background: #e52b2b;
     }
     footer {
-      text-align: center;
-      padding: 15px;
       background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 20px;
       margin-top: 40px;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
-  <div class="topbar">🛒 Items in Your Cart | Free Delivery On All Orders</div>
   <header>
-    <h1>🛍️ Prime Picks</h1>
+    <h1>🛒 Your Shopping Cart</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="product3.html">Product</a>
+      <a href="product2.html">Products</a>
       <a href="contact2.html">Contact</a>
-      <a href="refund.html">Refund</a>
     </nav>
   </header>
+
   <div class="container">
+    <h2>Items in Your Cart</h2>
+
     <div class="cart-item">
-      <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" alt="AirPods">
-      <div class="cart-details">
-        <h3>AirPods Pro 4</h3>
-        <p>Unit Price: ₹999</p>
-        <div class="qty-controls">
-          <button onclick="updateQty(-1)">−</button>
-          <span id="quantity">1</span>
-          <button onclick="updateQty(1)">+</button>
-        </div>
+      <img src="https://m.media-amazon.com/images/I/51o-QwmV3nL._SX522_.jpg" alt="AirPods Pro 4">
+      <div class="item-details">
+        <h4>AirPods Pro 4 Clone</h4>
+        <p>Price: ₹999</p>
+        <p>Quantity: 1</p>
       </div>
     </div>
-    <h3>Total: ₹<span id="total">999</span></h3>
-    <a href="checkout3.html" class="btn">Proceed to Checkout</a>
+
+    <div class="cart-item">
+      <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRdVSCRKO0QGvuUzJIT2sSHOZGBgxTb1JHL1BCy95-pYrPXrgtjcFfgz3-G6Uo5K2i-VfR4K8kVS12QRx0c8y81IB6uungQvYeT7kAiUAbWEFh1xXPsM_VbLA" alt="Cable Organizer">
+      <div class="item-details">
+        <h4>Cable Organizer Clip Set</h4>
+        <p>Price: ₹399</p>
+        <p>Quantity: 1</p>
+      </div>
+    </div>
+
+    <a href="checkout3.html" class="checkout-btn">Proceed to Checkout</a>
   </div>
+
   <footer>
     &copy; 2025 Prime Picks | Built by Yahya ❤️
   </footer>
-
-  <script>
-    let quantity = 1;
-    const unitPrice = 999;
-    function updateQty(change) {
-      quantity += change;
-      if (quantity < 1) quantity = 1;
-      document.getElementById('quantity').textContent = quantity;
-      document.getElementById('total').textContent = unitPrice * quantity;
-    }
-  </script>
 </body>
 </html>
