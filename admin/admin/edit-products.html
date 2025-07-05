@@ -1,0 +1,159 @@
+<!-- admin/edit-products.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Products | Admin Panel</title>
+  <style>
+    :root {
+      --primary: #ff3c3c;
+      --background: #0f0f0f;
+      --surface: #1a1a1a;
+      --text: #ffffff;
+      --input: #2a2a2a;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+    header {
+      background: var(--primary);
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      background: var(--surface);
+      padding: 10px 20px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+      background: var(--primary);
+      padding: 10px 18px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #e63333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+    h2 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    form {
+      background: var(--surface);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 60, 60, 0.1);
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid var(--primary);
+      background: var(--input);
+      color: var(--text);
+    }
+    button {
+      background: var(--primary);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #e52a2a;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--surface);
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Edit Products</header>
+
+  <nav>
+    <a href="dashboard.html">🏠 Dashboard</a>
+    <a href="edit-products.html">📦 Edit Products</a>
+    <a href="edit-pages.html">📝 Edit Pages</a>
+    <a href="login.html">🔐 Logout</a>
+  </nav>
+
+  <div class="container">
+    <h2>Product Editor</h2>
+    <form id="productForm">
+      <label for="title">Product Name</label>
+      <input type="text" id="title" name="title" required>
+
+      <label for="desc">Description</label>
+      <textarea id="desc" name="desc" rows="4" required></textarea>
+
+      <label for="price">Price (₹)</label>
+      <input type="number" id="price" name="price" required>
+
+      <label for="images">Image URLs (comma-separated)</label>
+      <textarea id="images" name="images" rows="3" required></textarea>
+
+      <label for="stock">Stock Quantity</label>
+      <input type="number" id="stock" name="stock" required>
+
+      <button type="submit">✅ Save Product</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Prime Picks Admin | Built by Yahya
+  </footer>
+
+  <script>
+    document.getElementById('productForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const productData = {
+        title: document.getElementById('title').value.trim(),
+        desc: document.getElementById('desc').value.trim(),
+        price: document.getElementById('price').value.trim(),
+        images: document.getElementById('images').value.trim(),
+        stock: document.getElementById('stock').value.trim()
+      };
+
+      console.log("Product Submitted:", productData);
+
+      // TODO: Connect this to Google Sheets or Firebase using fetch()
+      alert("✅ Product submitted! (Demo - connect to Sheets to save)");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
