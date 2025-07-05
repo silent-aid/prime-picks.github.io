@@ -1,4 +1,3 @@
-<!-- admin/edit-products.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -136,7 +135,9 @@
   </footer>
 
   <script>
-    document.getElementById('productForm').addEventListener('submit', function(e) {
+    const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwLN97cW4FEp5iMZdgCZeZ2brx7cagZX5t8Hx-M7agaMt5sjIF0SC8UI6EJl-famx3q/exec";
+
+    document.getElementById('productForm').addEventListener('submit', function (e) {
       e.preventDefault();
 
       const productData = {
@@ -147,25 +148,25 @@
         stock: document.getElementById('stock').value.trim()
       };
 
-      fetch('https://script.google.com/macros/s/AKfycbxKPp9268WFXI4R9LiLA3hFqmq4cIgkG9yrOX1Ykb_gxgKvo51J3RS4DNmrJGd5Ejzp/exec', {
-        method: 'POST',
-        mode: 'cors',
+      fetch(SCRIPT_URL, {
+        method: "POST",
+        body: JSON.stringify(productData),
         headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(productData)
+          "Content-Type": "application/json"
+        }
       })
       .then(res => res.json())
       .then(data => {
-        if (data.status === 'success') {
-          alert('✅ Product saved successfully!');
+        if (data.status === "success") {
+          alert("✅ Product saved successfully!");
           document.getElementById('productForm').reset();
         } else {
-          alert('❌ Failed to save product: ' + data.message);
+          alert("❌ Error: " + data.message);
         }
       })
       .catch(err => {
-        alert('❌ Network error: ' + err);
+        alert("❌ Network error: " + err.message);
+        console.error(err);
       });
     });
   </script>
