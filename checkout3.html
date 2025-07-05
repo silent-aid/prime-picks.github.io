@@ -7,104 +7,118 @@
   <title>Checkout | Prime Picks</title>
   <style>
     :root {
-      --primary: #ff3c3c;
-      --background: #0f0f0f;
-      --surface: #1a1a1a;
-      --text: #ffffff;
-      --border: #ff3c3c;
+      --primary: #000000;
+      --secondary: #ffffff;
+      --accent: #ff3c3c;
+      --shadow: rgba(0, 0, 0, 0.1);
     }
     body {
       font-family: 'Segoe UI', sans-serif;
-      background: var(--background);
-      color: var(--text);
+      background: var(--secondary);
+      color: var(--primary);
       margin: 0;
     }
     header {
-      background: var(--background);
-      padding: 20px;
+      background: var(--primary);
+      color: var(--secondary);
       text-align: center;
-      border-bottom: 2px solid var(--primary);
+      padding: 20px;
+      border-bottom: 2px solid var(--accent);
     }
     nav a {
-      color: var(--primary);
+      color: var(--secondary);
       margin: 0 15px;
       text-decoration: none;
       font-weight: bold;
     }
+    nav a:hover {
+      color: var(--accent);
+    }
     .container {
-      max-width: 600px;
+      max-width: 800px;
       margin: auto;
-      padding: 30px 20px;
+      padding: 40px 20px;
     }
     h2 {
-      color: var(--primary);
       text-align: center;
       margin-bottom: 30px;
     }
     form {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      background: var(--surface);
-      padding: 25px;
-      border-radius: 10px;
-      border: 1px solid var(--border);
+      background: #f9f9f9;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px var(--shadow);
     }
-    input, textarea {
-      padding: 12px;
-      background: #111;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      color: white;
-      font-size: 16px;
-    }
-    textarea {
-      resize: vertical;
-    }
-    .submit-btn {
-      background: var(--primary);
-      color: white;
-      padding: 14px;
+    label {
+      display: block;
+      margin-top: 15px;
       font-weight: bold;
+    }
+    input, textarea, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .place-order {
+      display: block;
+      background: var(--accent);
+      color: #fff;
+      padding: 12px;
       border: none;
       border-radius: 8px;
+      font-weight: bold;
+      margin-top: 30px;
+      width: 100%;
       cursor: pointer;
       font-size: 16px;
+      box-shadow: 0 0 10px var(--shadow);
     }
-    .submit-btn:hover {
+    .place-order:hover {
       background: #e52b2b;
     }
     footer {
-      background: #111;
-      color: #ccc;
+      background: var(--primary);
+      color: var(--secondary);
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
+      margin-top: 50px;
       font-size: 14px;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>💳 Secure Checkout</h1>
+    <h1>🧾 Checkout</h1>
     <nav>
       <a href="index.html">Home</a>
-      <a href="cart3.html">Cart</a>
+      <a href="product2.html">Products</a>
+      <a href="contact2.html">Contact</a>
     </nav>
   </header>
 
   <div class="container">
-    <h2>Fill Your Details</h2>
-
+    <h2>Enter Your Details</h2>
     <form>
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <input type="tel" placeholder="Phone Number" required />
-      <textarea placeholder="Full Delivery Address" rows="4" required></textarea>
-      <input type="text" placeholder="Pin Code" required />
-      <input type="text" placeholder="City" required />
-      <input type="text" placeholder="State" required />
-      <button class="submit-btn" type="submit">Place Order</button>
+      <label for="name">Full Name</label>
+      <input type="text" id="name" required>
+
+      <label for="email">Email Address</label>
+      <input type="email" id="email" required>
+
+      <label for="address">Shipping Address</label>
+      <textarea id="address" rows="3" required></textarea>
+
+      <label for="payment">Payment Method</label>
+      <select id="payment">
+        <option>Cash on Delivery (COD)</option>
+        <option>UPI</option>
+        <option>Card</option>
+      </select>
+
+      <button class="place-order">Place Order</button>
     </form>
   </div>
 
