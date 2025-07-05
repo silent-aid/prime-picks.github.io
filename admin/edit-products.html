@@ -1,8 +1,9 @@
+<!-- admin/edit-products.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Edit Products | Admin Panel</title>
   <style>
     :root {
@@ -134,42 +135,37 @@
     &copy; 2025 Prime Picks Admin | Built by Yahya
   </footer>
 
- <script>
-  const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxd97lEkYde9jrQ6wbx9KFYtMiv0REHgVpHc0Ti7--WQDdprgG1TtWLOShJ3ZC2jDWm/exec";
+  <script>
+    document.getElementById('productForm').addEventListener('submit', async function (e) {
+      e.preventDefault();
 
-  document.getElementById('productForm').addEventListener('submit', function (e) {
-    e.preventDefault();
+      const product = {
+        title: document.getElementById('title').value.trim(),
+        desc: document.getElementById('desc').value.trim(),
+        price: document.getElementById('price').value.trim(),
+        images: document.getElementById('images').value.trim().split(','),
+        stock: document.getElementById('stock').value.trim()
+      };
 
-    const productData = {
-      title: document.getElementById('title').value.trim(),
-      desc: document.getElementById('desc').value.trim(),
-      price: document.getElementById('price').value.trim(),
-      images: document.getElementById('images').value.trim(),
-      stock: document.getElementById('stock').value.trim()
-    };
+      try {
+        const res = await fetch('https://your-cloud-proxy.com/update-products', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(product)
+        });
 
-    fetch(SCRIPT_URL, {
-      method: "POST",
-      body: JSON.stringify(productData),
-      headers: {
-        "Content-Type": "application/json"
+        const result = await res.json();
+        if (result.status === 'success') {
+          alert('✅ Product saved successfully!');
+          this.reset();
+        } else {
+          alert('❌ Error saving product: ' + result.message);
+        }
+      } catch (err) {
+        alert('❌ Network error: ' + err.message);
       }
-    })
-    .then(res => res.json())
-    .then(data => {
-      if (data.status === "success") {
-        alert("✅ Product saved to Google Sheet!");
-        document.getElementById('productForm').reset();
-      } else {
-        alert("❌ Error: " + data.message);
-      }
-    })
-    .catch(err => {
-      alert("❌ Network error: " + err.message);
-      console.error(err);
     });
-  });
-</script>
+  </script>
 
 </body>
 </html>
