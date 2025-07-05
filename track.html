@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Track Order | Prime Picks</title>
+  <style>
+    :root {
+      --primary: #000000;
+      --secondary: #ffffff;
+      --accent: #ff3c3c;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--secondary);
+      color: var(--primary);
+      margin: 0;
+      padding: 0;
+    }
+    .topbar {
+      background: var(--accent);
+      color: #fff;
+      padding: 12px;
+      text-align: center;
+      font-weight: bold;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: scrollText 15s linear infinite;
+    }
+    @keyframes scrollText {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+    header {
+      background: var(--primary);
+      color: var(--secondary);
+      padding: 25px 20px;
+      border-bottom: 2px solid var(--accent);
+      text-align: center;
+    }
+    nav a {
+      color: var(--secondary);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: var(--accent);
+    }
+    .container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
+      text-align: center;
+    }
+    h2 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 17px;
+      margin-bottom: 30px;
+    }
+    input, button {
+      padding: 12px;
+      font-size: 16px;
+      margin: 8px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    button {
+      background: var(--accent);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e52b2b;
+    }
+    .back-link {
+      margin-top: 30px;
+      display: inline-block;
+      text-decoration: none;
+      color: var(--accent);
+      font-weight: bold;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--primary);
+      color: var(--secondary);
+    }
+  </style>
+</head>
+<body>
+
+<div class="topbar">🔥 Big Sale! Use code <strong>PRIME60</strong> for up to 60% OFF | Free Shipping on All Orders 🚚</div>
+
+<header>
+  <h1>🛍️ Prime Picks</h1>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="product2.html">Product</a>
+    <a href="contact2.html">Contact</a>
+    <a href="refund.html">Refund</a>
+  </nav>
+</header>
+
+<div class="container">
+  <h2>Track Your Order</h2>
+  <p>Enter your order ID or email to check your order status.</p>
+  <input type="text" placeholder="Order ID or Email">
+  <button>Track Now</button>
+
+  <br><a class="back-link" href="index.html">← Back to Home</a>
+</div>
+
+<footer>
+  &copy; 2025 Prime Picks | Built by Yahya ❤️
+</footer>
+</body>
+</html>
