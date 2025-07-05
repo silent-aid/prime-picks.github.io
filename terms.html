@@ -1,4 +1,3 @@
-<!-- terms.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,18 +9,12 @@
       --primary: #000000;
       --secondary: #ffffff;
       --accent: #ff3c3c;
-      --shadow: rgba(0, 0, 0, 0.1);
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
     }
     body {
       font-family: 'Segoe UI', sans-serif;
       background: var(--secondary);
       color: var(--primary);
-      line-height: 1.6;
+      margin: 0;
     }
     .topbar {
       background: var(--accent);
@@ -29,13 +22,6 @@
       padding: 12px;
       text-align: center;
       font-weight: bold;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: scrollText 15s linear infinite;
-    }
-    @keyframes scrollText {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
     }
     header {
       background: var(--primary);
@@ -44,112 +30,76 @@
       border-bottom: 2px solid var(--accent);
       text-align: center;
     }
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 40px 20px;
+    nav a {
+      color: var(--secondary);
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: 600;
     }
-    h1 {
-      text-align: center;
-      color: var(--primary);
-      font-size: 30px;
-      margin-bottom: 20px;
+    nav a:hover {
+      color: var(--accent);
+    }
+    .container {
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
     }
     h2 {
-      margin-top: 30px;
-      font-size: 22px;
-      color: var(--accent);
+      font-size: 28px;
+      margin-bottom: 15px;
+      text-align: center;
     }
     p {
       font-size: 17px;
-      margin: 15px 0;
-      text-align: justify;
+      margin-bottom: 20px;
+      line-height: 1.7;
     }
-    .back-home {
+    .back-link {
       display: block;
-      margin: 40px auto 20px;
       text-align: center;
-    }
-    .back-home a {
-      background: var(--accent);
-      color: #fff;
-      padding: 10px 20px;
+      margin-top: 30px;
       text-decoration: none;
-      border-radius: 6px;
+      color: var(--accent);
       font-weight: bold;
-      transition: background 0.3s;
-    }
-    .back-home a:hover {
-      background: #e52b2b;
     }
     footer {
       text-align: center;
       padding: 20px;
       background: var(--primary);
       color: var(--secondary);
-      font-size: 14px;
-      margin-top: 60px;
     }
   </style>
 </head>
 <body>
-  <div class="topbar">🔥 Big Sale! Use code <strong>PRIME60</strong> for up to 60% OFF | Free Shipping on All Orders 🚚</div>
+
+  <div class="topbar">🔥 Use code <strong>PRIME60</strong> for up to 60% OFF | Free Shipping 🚚</div>
 
   <header>
-    <h2>Terms of Service</h2>
+    <h1>🛍️ Prime Picks</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product2.html">Product</a>
+      <a href="contact2.html">Contact</a>
+      <a href="refund.html">Refund</a>
+    </nav>
   </header>
 
   <div class="container">
-    <h1>Know Your Rights and Responsibilities</h1>
+    <h2>Terms of Service</h2>
 
-    <h2>1. Acceptance of Terms</h2>
-    <p>
-      By accessing and using our website, you agree to comply with and be bound by these Terms of Service. If you do not agree, please do not use our site or services.
-    </p>
+    <p>By using our website, you agree to comply with and be bound by these terms. Please read them carefully before using Prime Picks.</p>
 
-    <h2>2. Use of Website</h2>
-    <p>
-      You may use our site for lawful purposes only. You are prohibited from violating or attempting to violate any security features or using the site to distribute malware, spam, or harmful content.
-    </p>
+    <p><strong>1. Use of Site:</strong> You agree not to misuse our services or harm the platform in any way.</p>
 
-    <h2>3. Products and Pricing</h2>
-    <p>
-      All prices are subject to change without notice. We strive for accuracy, but reserve the right to correct any pricing errors that may occur.
-    </p>
+    <p><strong>2. Pricing:</strong> All prices are inclusive of taxes. We reserve the right to modify prices at any time.</p>
 
-    <h2>4. Shipping and Delivery</h2>
-    <p>
-      We offer fast, free shipping across India. Please refer to our Shipping Policy for more details. Delays may occur during festive seasons or unforeseen events.
-    </p>
+    <p><strong>3. Product Info:</strong> All product specifications are approximate and subject to change without notice.</p>
 
-    <h2>5. Returns and Refunds</h2>
-    <p>
-      Items can be returned within 7 days of delivery under qualifying conditions. Please see our Refund Policy for details on eligibility and process.
-    </p>
+    <p><strong>4. Refunds:</strong> Refunds are processed only after return approval and inspection. See our Shipping & Return Policy for more.</p>
 
-    <h2>6. Intellectual Property</h2>
-    <p>
-      All content, including images, logos, designs, and text, are the intellectual property of Prime Picks or its suppliers and cannot be reused without permission.
-    </p>
+    <p><strong>5. Modifications:</strong> We may update terms at any time without prior notice.</p>
 
-    <h2>7. Limitation of Liability</h2>
-    <p>
-      Prime Picks is not liable for any indirect, incidental, or consequential damages resulting from the use or misuse of our products or website.
-    </p>
-
-    <h2>8. Changes to Terms</h2>
-    <p>
-      We may revise these Terms at any time without notice. Continued use of our site after changes constitutes acceptance of those updates.
-    </p>
-
-    <h2>9. Contact</h2>
-    <p>
-      For questions about these Terms, contact us at <strong>gadgetsstore07@gmail.com</strong> or call <strong>9891021424</strong>.
-    </p>
-
-    <div class="back-home">
-      <a href="index.html">← Back to Home</a>
-    </div>
+    <a class="back-link" href="index.html">← Back to Home</a>
   </div>
 
   <footer>
