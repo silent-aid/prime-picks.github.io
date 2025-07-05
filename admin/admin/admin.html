@@ -1,0 +1,82 @@
+<!-- admin/login.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Prime Picks</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #ffffff;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .login-box {
+      background-color: #1c1c1c;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(255, 60, 60, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+    .login-box h2 {
+      margin-bottom: 20px;
+      text-align: center;
+      color: #ff3c3c;
+    }
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: #2c2c2c;
+      color: #fff;
+    }
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      background-color: #ff3c3c;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      color: white;
+      cursor: pointer;
+    }
+    .login-box button:hover {
+      background-color: #e63131;
+    }
+    .error {
+      color: red;
+      font-size: 14px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-box">
+    <h2>Admin Login</h2>
+    <input type="password" id="password" placeholder="Enter Admin Password">
+    <button onclick="login()">Login</button>
+    <div id="error" class="error"></div>
+  </div>
+
+  <script>
+    const adminPassword = "primeadmin123"; // Change this securely later
+    function login() {
+      const entered = document.getElementById("password").value;
+      if (entered === adminPassword) {
+        window.location.href = "dashboard.html";
+      } else {
+        document.getElementById("error").innerText = "Incorrect password!";
+      }
+    }
+  </script>
+</body>
+</html>
