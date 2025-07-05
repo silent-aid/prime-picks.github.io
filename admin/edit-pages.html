@@ -1,0 +1,156 @@
+
+<!-- admin/edit-pages.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Edit Pages | Admin Panel</title>
+  <style>
+    :root {
+      --primary: #ff3c3c;
+      --background: #0f0f0f;
+      --surface: #1a1a1a;
+      --text: #ffffff;
+      --input: #2a2a2a;
+    }
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+    header {
+      background: var(--primary);
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    nav {
+      background: var(--surface);
+      padding: 10px 20px;
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+    }
+    nav a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: bold;
+      background: var(--primary);
+      padding: 10px 18px;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background: #e63333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+    h2 {
+      color: var(--primary);
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    form {
+      background: var(--surface);
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 60, 60, 0.1);
+      margin-bottom: 40px;
+    }
+    label {
+      display: block;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+    select, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-top: 5px;
+      border-radius: 6px;
+      border: 1px solid var(--primary);
+      background: var(--input);
+      color: var(--text);
+    }
+    button {
+      background: var(--primary);
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    button:hover {
+      background: #e52a2a;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: var(--surface);
+      font-size: 14px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>Edit Pages</header>
+
+  <nav>
+    <a href="dashboard.html">🏠 Dashboard</a>
+    <a href="edit-products.html">📦 Edit Products</a>
+    <a href="edit-pages.html">📝 Edit Pages</a>
+    <a href="login.html">🔐 Logout</a>
+  </nav>
+
+  <div class="container">
+    <h2>Update Static Page Content</h2>
+    <form id="pageForm">
+      <label for="page">Select Page</label>
+      <select id="page" name="page" required>
+        <option value="about">About Us</option>
+        <option value="privacy">Privacy Policy</option>
+        <option value="refund">Refund Policy</option>
+        <option value="terms">Terms of Service</option>
+        <option value="shipping">Shipping Info</option>
+        <option value="contact">Contact Info</option>
+      </select>
+
+      <label for="content">Page Content (HTML/Text)</label>
+      <textarea id="content" name="content" rows="10" required></textarea>
+
+      <button type="submit">💾 Save Page</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 Prime Picks Admin | Built by Yahya
+  </footer>
+
+  <script>
+    document.getElementById('pageForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const pageData = {
+        page: document.getElementById('page').value,
+        content: document.getElementById('content').value.trim()
+      };
+
+      console.log("Page Saved:", pageData);
+
+      // TODO: Use fetch() to send to Google Sheets / Apps Script / Firebase
+      alert(`✅ "${pageData.page}" page updated! (Demo only)`);
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
