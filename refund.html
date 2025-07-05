@@ -1,95 +1,96 @@
-<!-- refund.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Refund Policy | Prime Picks</title>
   <style>
     :root {
-      --primary: #ff3c3c;
-      --background: #0f0f0f;
-      --surface: #1a1a1a;
-      --text: #ffffff;
-      --border: #ff3c3c;
+      --primary: #000000;
+      --secondary: #ffffff;
+      --accent: #ff3c3c;
     }
     body {
-      margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: var(--background);
-      color: var(--text);
+      background: var(--secondary);
+      color: var(--primary);
+      margin: 0;
     }
     .topbar {
-      background: var(--primary);
+      background: var(--accent);
+      color: #fff;
+      padding: 12px;
       text-align: center;
-      padding: 10px;
       font-weight: bold;
     }
     header {
+      background: var(--primary);
+      color: var(--secondary);
+      padding: 25px 20px;
+      border-bottom: 2px solid var(--accent);
       text-align: center;
-      padding: 20px;
-      border-bottom: 2px solid var(--border);
     }
     nav a {
-      color: var(--primary);
+      color: var(--secondary);
       margin: 0 15px;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 600;
+    }
+    nav a:hover {
+      color: var(--accent);
     }
     .container {
-      max-width: 800px;
-      margin: 40px auto;
-      background: var(--surface);
-      padding: 30px;
-      border-radius: 10px;
-      border: 2px solid var(--border);
-      box-shadow: 0 0 20px rgba(255, 60, 60, 0.2);
+      padding: 40px 20px;
+      max-width: 900px;
+      margin: auto;
     }
     h2 {
-      color: var(--primary);
+      font-size: 28px;
+      margin-bottom: 15px;
       text-align: center;
+    }
+    p {
+      font-size: 16px;
+      line-height: 1.6;
       margin-bottom: 20px;
     }
-    ul {
-      padding-left: 20px;
-    }
-    li {
-      margin-bottom: 10px;
+    .back-link {
+      text-align: center;
+      margin-top: 20px;
+      display: block;
+      font-weight: bold;
+      color: var(--accent);
+      text-decoration: none;
     }
     footer {
       text-align: center;
-      padding: 15px;
-      background: #111;
-      margin-top: 40px;
+      padding: 20px;
+      background: var(--primary);
+      color: var(--secondary);
     }
   </style>
 </head>
 <body>
-  <div class="topbar">🔁 Read our refund policy carefully before placing an order</div>
+
+  <div class="topbar">🔁 Refunds & Returns — Simple and Hassle-Free</div>
+
   <header>
     <h1>🛍️ Prime Picks</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="product2.html">Product</a>
-      <a href="contact2.html">Contact</a>
+      <a href="contact.html">Contact</a>
       <a href="refund.html">Refund</a>
     </nav>
   </header>
 
   <div class="container">
     <h2>Refund & Return Policy</h2>
-    <p>We value your satisfaction and strive to offer a fair and hassle-free experience. Please review our refund and return policy below:</p>
-
-    <ul>
-      <li>🕐 You can request a refund or replacement within 7 days of receiving your order.</li>
-      <li>📸 Proof of defect/damage must be provided via image or video.</li>
-      <li>🚫 Items must be unused and in original packaging to qualify for a return.</li>
-      <li>📦 Return shipping will be arranged based on your location and item type.</li>
-      <li>💰 Refunds will be processed within 5–7 business days after approval.</li>
-      <li>🔄 Exchanges are available for defective items only.</li>
-    </ul>
-
-    <p>For any issues or concerns, please <a href="contact2.html" style="color:var(--primary);text-decoration:underline;">contact us</a>. We’re here to help!</p>
+    <p>At Prime Picks, customer satisfaction is our priority. If you're not satisfied with your purchase, you may return the product within 7 days of delivery.</p>
+    <p>To initiate a return, simply email us at <strong>gadgetsstore07@gmail.com</strong> with your order number and the reason for return. We will guide you through the process.</p>
+    <p>Refunds will be processed within 5–7 business days after receiving the returned item. Please ensure the product is in original condition and packaging.</p>
+    <p><strong>Note:</strong> We do not accept returns for items damaged after delivery or for reasons unrelated to product performance (e.g., change of mind).</p>
+    <a href="index.html" class="back-link">← Back to Home</a>
   </div>
 
   <footer>
