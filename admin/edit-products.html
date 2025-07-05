@@ -136,6 +136,8 @@
   </footer>
 
   <script>
+    const sheetURL = "https://script.google.com/macros/s/AKfycbzhGswlkX1i_LjBdW7EIHbbqtZ9cwv3qYFG4WX3ZKUY3DzmybMzpR8fBYteBSLOWjhv/exec";
+
     document.getElementById('productForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
@@ -147,11 +149,23 @@
         stock: document.getElementById('stock').value.trim()
       };
 
-      console.log("Product Submitted:", productData);
-
-      // TODO: Connect this to Google Sheets or Firebase using fetch()
-      alert("✅ Product submitted! (Demo - connect to Sheets to save)");
-      this.reset();
+      fetch(sheetURL, {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(productData)
+      })
+      .then(res => res.text())
+      .then(response => {
+        alert("✅ Product saved successfully!");
+        console.log(response);
+        document.getElementById('productForm').reset();
+      })
+      .catch(error => {
+        alert("❌ Failed to save product.");
+        console.error(error);
+      });
     });
   </script>
 
