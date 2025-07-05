@@ -1,4 +1,3 @@
-
 <!-- admin/edit-pages.html -->
 <!DOCTYPE html>
 <html lang="en">
@@ -61,7 +60,6 @@
       padding: 25px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(255, 60, 60, 0.1);
-      margin-bottom: 40px;
     }
     label {
       display: block;
@@ -102,7 +100,7 @@
 </head>
 <body>
 
-  <header>Edit Pages</header>
+  <header>Edit Website Pages</header>
 
   <nav>
     <a href="dashboard.html">🏠 Dashboard</a>
@@ -112,22 +110,23 @@
   </nav>
 
   <div class="container">
-    <h2>Update Static Page Content</h2>
+    <h2>Page Editor</h2>
     <form id="pageForm">
       <label for="page">Select Page</label>
       <select id="page" name="page" required>
-        <option value="about">About Us</option>
+        <option value="about">About</option>
         <option value="privacy">Privacy Policy</option>
-        <option value="refund">Refund Policy</option>
-        <option value="terms">Terms of Service</option>
-        <option value="shipping">Shipping Info</option>
-        <option value="contact">Contact Info</option>
+        <option value="shipping">Shipping Policy</option>
+        <option value="terms">Terms & Conditions</option>
       </select>
 
-      <label for="content">Page Content (HTML/Text)</label>
-      <textarea id="content" name="content" rows="10" required></textarea>
+      <label for="title">Page Title</label>
+      <input type="text" id="title" required />
 
-      <button type="submit">💾 Save Page</button>
+      <label for="content">Page Content</label>
+      <textarea id="content" rows="10" required></textarea>
+
+      <button type="submit">✅ Save Page</button>
     </form>
   </div>
 
@@ -136,20 +135,49 @@
   </footer>
 
   <script>
-    document.getElementById('pageForm').addEventListener('submit', function(e) {
-      e.preventDefault();
+    const sheetURL = "https://script.google.com/macros/s/AKfycbzhGswlkX1i_LjBdW7EIHbbqtZ9cwv3qYFG4WX3ZKUY3DzmybMzpR8fBYteBSLOWjhv/exec";
 
-      const pageData = {
-        page: document.getElementById('page').value,
-        content: document.getElementById('content').value.trim()
-      };
+    const form = document.getElementById("pageForm");
+    const pageSelect = document.getElementById("page");
+    const titleInput = document.getElementById("title");
+    const contentInput = document.getElementById("content");
 
-      console.log("Page Saved:", pageData);
-
-      // TODO: Use fetch() to send to Google Sheets / Apps Script / Firebase
-      alert(`✅ "${pageData.page}" page updated! (Demo only)`);
-      this.reset();
+    // Auto-fill on change
+    pageSelect.addEventListener("change", () => {
+      fetch(sheetURL + `?type=read&page=${pageSelect.value}`)
+        .then(res => res.json())
+        .then(data => {
+          titleInput.value = data.title || "";
+          contentInput.value = data.content || "";
+        })
+        .catch(err => alert("❌ Failed to load page data."));
     });
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const payload = {
+        type: "updatePage",
+        page: pageSelect.value,
+        title: titleInput.value.trim(),
+        content: contentInput.value.trim()
+      };
+      fetch(sheetURL, {
+        method: "POST",
+        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/json" }
+      })
+      .then(res => res.text())
+      .then(msg => {
+        alert("✅ Page saved successfully!");
+      })
+      .catch(err => {
+        console.error(err);
+        alert("❌ Failed to save page.");
+      });
+    });
+
+    // Load first page on start
+    pageSelect.dispatchEvent(new Event("change"));
   </script>
 
 </body>
