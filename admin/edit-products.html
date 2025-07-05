@@ -136,8 +136,6 @@
   </footer>
 
   <script>
-    const sheetURL = "https://script.google.com/macros/s/AKfycbzhGswlkX1i_LjBdW7EIHbbqtZ9cwv3qYFG4WX3ZKUY3DzmybMzpR8fBYteBSLOWjhv/exec";
-
     document.getElementById('productForm').addEventListener('submit', function(e) {
       e.preventDefault();
 
@@ -149,22 +147,24 @@
         stock: document.getElementById('stock').value.trim()
       };
 
-      fetch(sheetURL, {
+      fetch("https://script.google.com/macros/s/AKfycbzmawDmHxHHDboXQZI3_yjfV9zFHeHG3_jV1dx0vBNOr6K6uy0jbqnfAAEy7N2V3_2T/exec", {
         method: "POST",
+        body: JSON.stringify(productData),
         headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(productData)
+          "Content-Type": "application/json"
+        }
       })
-      .then(res => res.text())
-      .then(response => {
-        alert("✅ Product saved successfully!");
-        console.log(response);
-        document.getElementById('productForm').reset();
+      .then(res => res.json())
+      .then(data => {
+        if (data.status === "success") {
+          alert("✅ Product saved!");
+          document.getElementById('productForm').reset();
+        } else {
+          alert("❌ Failed to save: " + data.message);
+        }
       })
-      .catch(error => {
-        alert("❌ Failed to save product.");
-        console.error(error);
+      .catch(err => {
+        alert("❌ Network error: " + err.message);
       });
     });
   </script>
