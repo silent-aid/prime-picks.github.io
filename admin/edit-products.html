@@ -147,24 +147,25 @@
         stock: document.getElementById('stock').value.trim()
       };
 
-      fetch("https://script.google.com/macros/s/AKfycbzmawDmHxHHDboXQZI3_yjfV9zFHeHG3_jV1dx0vBNOr6K6uy0jbqnfAAEy7N2V3_2T/exec", {
-        method: "POST",
-        body: JSON.stringify(productData),
+      fetch('https://script.google.com/macros/s/AKfycbye7JtCLYH0zf3JoMmSU4Ym97RK9aJXzcWZV56q7ep6VKe0zUH7XfAI_sxpgrNo26Q/exec', {
+        method: 'POST',
+        mode: 'cors',
         headers: {
-          "Content-Type": "application/json"
-        }
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(productData)
       })
       .then(res => res.json())
       .then(data => {
-        if (data.status === "success") {
-          alert("✅ Product saved!");
+        if (data.status === 'success') {
+          alert('✅ Product saved successfully!');
           document.getElementById('productForm').reset();
         } else {
-          alert("❌ Failed to save: " + data.message);
+          alert('❌ Failed to save product: ' + data.message);
         }
       })
       .catch(err => {
-        alert("❌ Network error: " + err.message);
+        alert('❌ Network error: ' + err);
       });
     });
   </script>
