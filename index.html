@@ -5,58 +5,64 @@
 <title>MQ Threads® | Luxury Streetwear India</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0b0b0b;
-  --text:#f5f5f5;
-  --muted:#9a9a9a;
-  --gold:#c7a14a;
+  --bg:#070707;
+  --panel:#0f0f0f;
+  --text:#f2f2f2;
+  --muted:#9b9b9b;
+  --gold:#c8a85a;
 }
 
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
+*{margin:0;padding:0;box-sizing:border-box}
 body{
   background:var(--bg);
   color:var(--text);
   font-family:'Inter',sans-serif;
 }
 
+/* LOADER */
+#loader{
+  position:fixed;inset:0;
+  background:#000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+#loader h1{
+  font-family:'Playfair Display',serif;
+  letter-spacing:4px;
+  animation:pulse 2s infinite;
+}
+@keyframes pulse{
+  0%{opacity:.3}50%{opacity:1}100%{opacity:.3}
+}
+
 /* NAV */
 header{
   position:fixed;
-  top:0;
-  width:100%;
+  top:0;width:100%;
+  padding:18px 50px;
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  padding:18px 40px;
-  background:rgba(0,0,0,0.65);
-  backdrop-filter:blur(12px);
-  z-index:999;
+  background:rgba(0,0,0,.6);
+  backdrop-filter:blur(15px);
+  z-index:1000;
 }
 header h1{
   font-family:'Playfair Display',serif;
   letter-spacing:3px;
-  font-size:20px;
 }
 header a{
-  color:var(--text);
-  text-decoration:none;
   border:1px solid var(--gold);
-  padding:8px 18px;
-  transition:.3s;
+  padding:8px 20px;
+  text-decoration:none;
+  color:var(--text);
 }
-header a:hover{
-  background:var(--gold);
-  color:#000;
-}
+header a:hover{background:var(--gold);color:#000}
 
 /* HERO */
 .hero{
@@ -65,38 +71,46 @@ header a:hover{
   align-items:center;
   justify-content:center;
   text-align:center;
-  padding:120px 20px;
+  padding:140px 20px;
   background:
-    linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.9)),
+    linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.95)),
     url("https://images.unsplash.com/photo-1520975869010-6d5e8f6a6b2b") center/cover;
 }
 .hero h2{
   font-family:'Playfair Display',serif;
-  font-size:46px;
-  max-width:800px;
+  font-size:48px;
 }
 .hero p{
-  margin:18px 0;
+  margin:20px 0;
   color:var(--muted);
-  letter-spacing:1px;
 }
 .timer{
-  margin-top:15px;
   color:var(--gold);
-  font-weight:500;
+  letter-spacing:1px;
 }
 
-/* SECTION */
-section{
-  padding:90px 40px;
+/* SECTIONS */
+section{padding:100px 60px}
+
+/* LOOKBOOK */
+.lookbook{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
+}
+.lookbook img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  filter:grayscale(10%);
 }
 
 /* SHOP */
 .shop h3{
-  text-align:center;
   font-family:'Playfair Display',serif;
-  font-size:34px;
-  margin-bottom:50px;
+  text-align:center;
+  font-size:36px;
+  margin-bottom:60px;
 }
 .products{
   display:grid;
@@ -104,13 +118,13 @@ section{
   gap:40px;
 }
 .product{
-  background:#111;
+  background:var(--panel);
+  padding:20px;
   border:1px solid #222;
-  padding:18px;
   transition:.4s;
 }
 .product:hover{
-  transform:translateY(-8px);
+  transform:translateY(-10px);
   border-color:var(--gold);
 }
 .product img{
@@ -118,34 +132,24 @@ section{
   height:380px;
   object-fit:cover;
 }
-.product h4{
-  margin-top:15px;
-  font-weight:400;
-}
-.product p{
-  color:var(--gold);
-  margin:6px 0;
-}
+.product h4{margin-top:15px;font-weight:400}
+.product p{color:var(--gold)}
 .product button{
+  margin-top:15px;
   width:100%;
   padding:12px;
   background:transparent;
   border:1px solid var(--gold);
   color:var(--gold);
   cursor:pointer;
-  transition:.3s;
 }
-.product button:hover{
-  background:var(--gold);
-  color:#000;
-}
+.product button:hover{background:var(--gold);color:#000}
 
 /* MODAL */
 .modal{
   display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,.85);
+  position:fixed;inset:0;
+  background:rgba(0,0,0,.9);
   justify-content:center;
   align-items:center;
   z-index:2000;
@@ -153,52 +157,41 @@ section{
 .modal-box{
   background:rgba(15,15,15,.95);
   backdrop-filter:blur(20px);
-  width:90%;
-  max-width:950px;
+  width:90%;max-width:950px;
+  padding:30px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:25px;
-  padding:25px;
-  border:1px solid #333;
+  gap:30px;
 }
 .modal-box img{
-  width:100%;
-  height:450px;
-  object-fit:cover;
+  width:100%;height:460px;object-fit:cover;
 }
 .close{
-  position:absolute;
-  top:25px;
-  right:40px;
-  font-size:26px;
-  cursor:pointer;
+  position:absolute;top:30px;right:50px;
+  font-size:26px;cursor:pointer;
 }
 .size button{
-  margin-right:8px;
-  margin-top:8px;
-  padding:6px 14px;
+  margin:6px;
+  padding:8px 16px;
   background:#000;
   color:#fff;
   border:1px solid #444;
-  cursor:pointer;
 }
-.size button:hover{
-  border-color:var(--gold);
-}
+.size button:hover{border-color:var(--gold)}
+.stock{color:var(--muted);margin-top:8px}
 .whatsapp{
   margin-top:25px;
   width:100%;
   padding:14px;
   background:var(--gold);
   border:none;
-  font-size:15px;
   cursor:pointer;
 }
 
 /* FOOTER */
 footer{
   border-top:1px solid #222;
-  padding:30px;
+  padding:40px;
   text-align:center;
   color:var(--muted);
   font-size:13px;
@@ -208,6 +201,8 @@ footer{
 
 <body>
 
+<div id="loader"><h1>MQ THREADS®</h1></div>
+
 <header>
   <h1>MQ THREADS®</h1>
   <a href="#shop">ENTER STORE</a>
@@ -215,31 +210,30 @@ footer{
 
 <section class="hero">
   <div>
-    <h2>Luxury Streetwear Crafted for Modern India</h2>
-    <p>Minimal • Masculine • Limited</p>
+    <h2>Luxury Streetwear for the Modern Indian Man</h2>
+    <p>Limited Production · No Restocks</p>
     <div class="timer" id="timer"></div>
   </div>
 </section>
 
+<section>
+  <div class="lookbook">
+    <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
+    <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+    <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c">
+  </div>
+</section>
+
 <section id="shop" class="shop">
-  <h3>India Exclusive Collection</h3>
+  <h3>India Exclusive Drop</h3>
 
   <div class="products">
-
     <div class="product">
       <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
       <h4>Oversized Black Tee</h4>
       <p>₹999</p>
-      <button onclick="openProduct('Oversized Black Tee','999','https://images.unsplash.com/photo-1520975916090-3105956dac38')">View</button>
+      <button onclick="openProduct('Oversized Black Tee','999','18 / 30 left')">View</button>
     </div>
-
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
-      <h4>Classic White Tee</h4>
-      <p>₹899</p>
-      <button onclick="openProduct('Classic White Tee','899','https://images.unsplash.com/photo-1512436991641-6745cdb1723f')">View</button>
-    </div>
-
   </div>
 </section>
 
@@ -250,43 +244,42 @@ footer{
     <div>
       <h2 id="mTitle"></h2>
       <p style="color:var(--gold)">₹<span id="mPrice"></span></p>
-      <p>220 GSM Premium Cotton • Oversized Fit • India Exclusive</p>
-
+      <p>240 GSM Premium Cotton · Oversized Fit</p>
       <div class="size">
-        <p>Select Size</p>
         <button>S</button><button>M</button><button>L</button><button>XL</button>
       </div>
-
+      <div class="stock" id="stock"></div>
       <button class="whatsapp" onclick="orderNow()">Order on WhatsApp (COD)</button>
     </div>
   </div>
 </div>
 
 <footer>
-  © 2025 MQ Threads India · Limited Production · Cash on Delivery
+  © 2025 MQ Threads India · Crafted in Limited Quantities
 </footer>
 
 <script>
-let product="", price="";
+window.onload=()=>document.getElementById("loader").style.display="none";
 
-function openProduct(n,p,i){
-  product=n; price=p;
+let product="",price="",stock="";
+
+function openProduct(n,p,s){
+  product=n;price=p;stock=s;
   document.getElementById("mTitle").innerText=n;
   document.getElementById("mPrice").innerText=p;
-  document.getElementById("mImg").src=i;
+  document.getElementById("stock").innerText="Stock: "+s;
+  document.getElementById("mImg").src="https://images.unsplash.com/photo-1520975916090-3105956dac38";
   document.getElementById("modal").style.display="flex";
 }
-function closeModal(){
-  document.getElementById("modal").style.display="none";
-}
+function closeModal(){modal.style.display="none";}
 function orderNow(){
   let phone="919121783895";
-  let msg=`Hi MQ Threads,%0AI want to order:%0A${product}%0A₹${price}%0ASize: ___%0AAddress: ___%0APayment: COD`;
+  let msg=`Hi MQ Threads,%0AOrder:%0A${product}%0A₹${price}%0ASize: ___%0AAddress: ___%0APayment: COD`;
   window.open(`https://wa.me/${phone}?text=${msg}`,"_blank");
 }
 
 /* COUNTDOWN */
-let end=new Date().getTime()+5*60*60*1000;
+let end=new Date().getTime()+6*60*60*1000;
 setInterval(()=>{
   let d=end-new Date().getTime();
   if(d<0){timer.innerText="Drop Closed";return;}
