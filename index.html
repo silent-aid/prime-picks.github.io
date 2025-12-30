@@ -2,91 +2,142 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>MQ Threads India | Premium Streetwear</title>
+<title>MQ Threads® | Luxury Streetwear India</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
+:root{
+  --bg:#0b0b0b;
+  --text:#f5f5f5;
+  --muted:#9a9a9a;
+  --gold:#c7a14a;
+}
+
 *{
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:Arial, Helvetica, sans-serif;
 }
+
 body{
-  background:#fff;
-  color:#111;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
 }
 
 /* NAV */
 header{
+  position:fixed;
+  top:0;
+  width:100%;
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:15px 25px;
-  border-bottom:2px solid #000;
+  padding:18px 40px;
+  background:rgba(0,0,0,0.65);
+  backdrop-filter:blur(12px);
+  z-index:999;
 }
 header h1{
-  letter-spacing:2px;
+  font-family:'Playfair Display',serif;
+  letter-spacing:3px;
+  font-size:20px;
 }
 header a{
+  color:var(--text);
   text-decoration:none;
-  background:#000;
-  color:#fff;
-  padding:8px 16px;
+  border:1px solid var(--gold);
+  padding:8px 18px;
+  transition:.3s;
+}
+header a:hover{
+  background:var(--gold);
+  color:#000;
 }
 
 /* HERO */
 .hero{
-  padding:70px 20px;
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   text-align:center;
-  background:#f4f4f4;
+  padding:120px 20px;
+  background:
+    linear-gradient(to bottom,rgba(0,0,0,.6),rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1520975869010-6d5e8f6a6b2b") center/cover;
 }
 .hero h2{
-  font-size:34px;
+  font-family:'Playfair Display',serif;
+  font-size:46px;
+  max-width:800px;
 }
 .hero p{
-  margin:10px 0 15px;
-  color:#555;
+  margin:18px 0;
+  color:var(--muted);
+  letter-spacing:1px;
+}
+.timer{
+  margin-top:15px;
+  color:var(--gold);
+  font-weight:500;
 }
 
-/* TIMER */
-.timer{
-  color:#c00;
-  font-weight:bold;
-  margin-top:10px;
+/* SECTION */
+section{
+  padding:90px 40px;
 }
 
 /* SHOP */
-.shop{
-  padding:50px 20px;
+.shop h3{
   text-align:center;
+  font-family:'Playfair Display',serif;
+  font-size:34px;
+  margin-bottom:50px;
 }
 .products{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:25px;
-  margin-top:30px;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:40px;
 }
 .product{
-  border:1px solid #ddd;
-  padding:15px;
+  background:#111;
+  border:1px solid #222;
+  padding:18px;
+  transition:.4s;
+}
+.product:hover{
+  transform:translateY(-8px);
+  border-color:var(--gold);
 }
 .product img{
   width:100%;
-  height:350px;
+  height:380px;
   object-fit:cover;
 }
 .product h4{
-  margin:10px 0 5px;
+  margin-top:15px;
+  font-weight:400;
+}
+.product p{
+  color:var(--gold);
+  margin:6px 0;
 }
 .product button{
-  margin-top:10px;
-  padding:10px;
   width:100%;
-  background:#000;
-  color:#fff;
-  border:none;
+  padding:12px;
+  background:transparent;
+  border:1px solid var(--gold);
+  color:var(--gold);
   cursor:pointer;
+  transition:.3s;
+}
+.product button:hover{
+  background:var(--gold);
+  color:#000;
 }
 
 /* MODAL */
@@ -94,47 +145,63 @@ header a{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.7);
+  background:rgba(0,0,0,.85);
   justify-content:center;
   align-items:center;
-  z-index:1000;
+  z-index:2000;
 }
-.modal-content{
-  background:#fff;
+.modal-box{
+  background:rgba(15,15,15,.95);
+  backdrop-filter:blur(20px);
   width:90%;
-  max-width:900px;
-  padding:20px;
+  max-width:950px;
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:20px;
+  gap:25px;
+  padding:25px;
+  border:1px solid #333;
 }
-.modal img{
+.modal-box img{
   width:100%;
-  height:420px;
+  height:450px;
   object-fit:cover;
 }
 .close{
   position:absolute;
-  top:15px;
-  right:25px;
+  top:25px;
+  right:40px;
   font-size:26px;
-  color:#fff;
   cursor:pointer;
 }
 .size button{
-  padding:6px 12px;
   margin-right:8px;
-  border:1px solid #000;
-  background:#fff;
+  margin-top:8px;
+  padding:6px 14px;
+  background:#000;
+  color:#fff;
+  border:1px solid #444;
+  cursor:pointer;
+}
+.size button:hover{
+  border-color:var(--gold);
+}
+.whatsapp{
+  margin-top:25px;
+  width:100%;
+  padding:14px;
+  background:var(--gold);
+  border:none;
+  font-size:15px;
   cursor:pointer;
 }
 
 /* FOOTER */
 footer{
-  background:#f2f2f2;
-  padding:20px;
+  border-top:1px solid #222;
+  padding:30px;
   text-align:center;
-  margin-top:40px;
+  color:var(--muted);
+  font-size:13px;
 }
 </style>
 </head>
@@ -142,75 +209,71 @@ footer{
 <body>
 
 <header>
-  <h1>MQ THREADS</h1>
-  <a href="#shop">Shop Now</a>
+  <h1>MQ THREADS®</h1>
+  <a href="#shop">ENTER STORE</a>
 </header>
 
 <section class="hero">
-  <h2>Premium Streetwear for India 🇮🇳</h2>
-  <p>Minimal • Masculine • Made to Last</p>
-  <div class="timer" id="timer"></div>
+  <div>
+    <h2>Luxury Streetwear Crafted for Modern India</h2>
+    <p>Minimal • Masculine • Limited</p>
+    <div class="timer" id="timer"></div>
+  </div>
 </section>
 
 <section id="shop" class="shop">
-  <h3>Best Sellers</h3>
+  <h3>India Exclusive Collection</h3>
 
   <div class="products">
 
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" alt="Black Tee">
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38">
       <h4>Oversized Black Tee</h4>
       <p>₹999</p>
-      <button onclick="openProduct('Oversized Black Tee','999','https://images.unsplash.com/photo-1520975916090-3105956dac38')">View Product</button>
+      <button onclick="openProduct('Oversized Black Tee','999','https://images.unsplash.com/photo-1520975916090-3105956dac38')">View</button>
     </div>
 
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="White Tee">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
       <h4>Classic White Tee</h4>
       <p>₹899</p>
-      <button onclick="openProduct('Classic White Tee','899','https://images.unsplash.com/photo-1512436991641-6745cdb1723f')">View Product</button>
+      <button onclick="openProduct('Classic White Tee','899','https://images.unsplash.com/photo-1512436991641-6745cdb1723f')">View</button>
     </div>
 
   </div>
 </section>
 
-<!-- PRODUCT MODAL -->
 <div class="modal" id="modal">
   <span class="close" onclick="closeModal()">✕</span>
-  <div class="modal-content">
-    <img id="modalImg">
+  <div class="modal-box">
+    <img id="mImg">
     <div>
-      <h2 id="modalTitle"></h2>
-      <p><b>Price:</b> ₹<span id="modalPrice"></span></p>
-      <p>Premium 200 GSM Cotton | Regular Fit</p>
+      <h2 id="mTitle"></h2>
+      <p style="color:var(--gold)">₹<span id="mPrice"></span></p>
+      <p>220 GSM Premium Cotton • Oversized Fit • India Exclusive</p>
 
       <div class="size">
-        <p><b>Select Size</b></p>
+        <p>Select Size</p>
         <button>S</button><button>M</button><button>L</button><button>XL</button>
       </div>
 
-      <br>
-      <button onclick="orderNow()" style="padding:12px;width:100%;background:#000;color:#fff;border:none;">
-        Order on WhatsApp (COD)
-      </button>
+      <button class="whatsapp" onclick="orderNow()">Order on WhatsApp (COD)</button>
     </div>
   </div>
 </div>
 
 <footer>
-  <p>© 2025 MQ Threads India</p>
-  <p>Cash on Delivery | Pan India Shipping</p>
+  © 2025 MQ Threads India · Limited Production · Cash on Delivery
 </footer>
 
 <script>
-let currentProduct="", currentPrice="";
+let product="", price="";
 
-function openProduct(name, price, img){
-  currentProduct=name;
-  currentPrice=price;
-  document.getElementById("modalTitle").innerText=name;
-  document.getElementById("modalPrice").innerText=price;
-  document.getElementById("modalImg").src=img;
+function openProduct(n,p,i){
+  product=n; price=p;
+  document.getElementById("mTitle").innerText=n;
+  document.getElementById("mPrice").innerText=p;
+  document.getElementById("mImg").src=i;
   document.getElementById("modal").style.display="flex";
 }
 function closeModal(){
@@ -218,21 +281,19 @@ function closeModal(){
 }
 function orderNow(){
   let phone="919121783895";
-  let msg=`Hi MQ Threads 👋%0AProduct: ${currentProduct}%0APrice: ₹${currentPrice}%0ASize: ___%0AAddress: ___%0APayment: COD`;
+  let msg=`Hi MQ Threads,%0AI want to order:%0A${product}%0A₹${price}%0ASize: ___%0AAddress: ___%0APayment: COD`;
   window.open(`https://wa.me/${phone}?text=${msg}`,"_blank");
 }
 
-/* COUNTDOWN TIMER */
-let end = new Date().getTime() + 6*60*60*1000;
+/* COUNTDOWN */
+let end=new Date().getTime()+5*60*60*1000;
 setInterval(()=>{
-  let now = new Date().getTime();
-  let d = end-now;
-  if(d<0){document.getElementById("timer").innerText="Sale Ended"; return;}
-  let h=Math.floor(d/(1000*60*60));
-  let m=Math.floor((d%(1000*60*60))/(1000*60));
-  let s=Math.floor((d%(1000*60))/1000);
-  document.getElementById("timer").innerText=
-    `Hurry! Sale ends in ${h}h ${m}m ${s}s`;
+  let d=end-new Date().getTime();
+  if(d<0){timer.innerText="Drop Closed";return;}
+  let h=Math.floor(d/3600000),
+      m=Math.floor((d%3600000)/60000),
+      s=Math.floor((d%60000)/1000);
+  timer.innerText=`Drop ends in ${h}h ${m}m ${s}s`;
 },1000);
 </script>
 
