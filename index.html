@@ -1,251 +1,144 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Home | Prime Picks</title>
-  <style>
-    :root {
-      --primary: #000000;
-      --secondary: #ffffff;
-      --accent: #ff3c3c;
-      --shadow: rgba(0, 0, 0, 0.1);
-    }
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: var(--secondary);
-      color: var(--primary);
-      line-height: 1.6;
-    }
-    .topbar {
-      background: var(--accent);
-      color: #fff;
-      padding: 12px;
-      text-align: center;
-      font-weight: bold;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: scrollText 15s linear infinite;
-    }
-    @keyframes scrollText {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
-    header {
-      background: var(--primary);
-      color: var(--secondary);
-      padding: 25px 20px;
-      border-bottom: 2px solid var(--accent);
-      text-align: center;
-    }
-    nav a {
-      color: var(--secondary);
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 16px;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: var(--accent);
-    }
-    .container {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    .hero {
-      display: flex;
-      overflow-x: auto;
-      gap: 20px;
-      padding: 30px 0;
-      justify-content: center;
-    }
-    .hero img {
-      height: 220px;
-      border-radius: 14px;
-      border: 2px solid var(--primary);
-      box-shadow: 0 0 12px var(--shadow);
-      transition: transform 0.3s;
-    }
-    .hero img:hover {
-      transform: scale(1.05);
-    }
-    h2 {
-      color: var(--primary);
-      font-size: 28px;
-      margin-top: 25px;
-      text-align: center;
-    }
-    p {
-      font-size: 17px;
-      margin: 20px auto;
-      max-width: 800px;
-      text-align: center;
-    }
-    .cta {
-      display: block;
-      background: var(--accent);
-      color: #fff;
-      padding: 14px 30px;
-      border-radius: 8px;
-      margin: 20px auto;
-      text-align: center;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 10px var(--shadow);
-      width: fit-content;
-    }
-    .cta:hover {
-      background: #e52b2b;
-    }
-    .features {
-      margin-top: 60px;
-      background: #f9f9f9;
-      padding: 40px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-    }
-    .features h3 {
-      color: var(--primary);
-      margin-bottom: 25px;
-      font-size: 24px;
-      text-align: center;
-    }
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-    }
-    .feature-box {
-      background: #fff;
-      border: 1px solid #ddd;
-      padding: 20px;
-      border-radius: 10px;
-      text-align: center;
-      box-shadow: 0 0 8px rgba(0, 0, 0, 0.03);
-      transition: transform 0.3s;
-    }
-    .feature-box:hover {
-      transform: translateY(-5px);
-    }
-    .feature-box span {
-      display: block;
-      font-size: 24px;
-      color: var(--accent);
-      margin-bottom: 10px;
-    }
-    .footer-extra {
-      background: #f1f1f1;
-      padding: 40px 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 30px;
-      text-align: left;
-      font-size: 15px;
-    }
-    .footer-extra div h4 {
-      margin-bottom: 12px;
-      color: var(--primary);
-    }
-    .footer-extra div ul {
-      list-style: none;
-      padding: 0;
-    }
-    .footer-extra div ul li {
-      margin-bottom: 8px;
-    }
-    .footer-extra img {
-      max-width: 100px;
-      margin-bottom: 15px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: var(--primary);
-      color: var(--secondary);
-      font-size: 14px;
-    }
-  </style>
-</head>
-<body>
-  <div class="topbar">🔥 Big Sale! Use code <strong>PRIME60</strong> for up to 60% OFF | Free Shipping on All Orders 🚚</div>
+<meta charset="UTF-8">
+<title>MQ Threads India | Premium Streetwear</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <header>
-    <h1>🛍️ Prime Picks</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="product2.html">Product</a>
-      <a href="contact2.html">Contact</a>
-      <a href="refund.html">Refund</a>
-       <li><a href="faq.html">FAQ</a></li> <!-- ✅ New link -->
-    </nav>
-  </header>
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+body{
+  background:#fff;
+  color:#111;
+}
 
-  <div class="container">
-    <div class="hero">
-      <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" alt="AirPods">
-      <img src="https://img.freepik.com/premium-vector/free-delivery-icon-free-delivery-service-logo_349999-2344.jpg" alt="Free Delivery">
-      <img src="https://img.freepik.com/premium-vector/refund-icon_1134231-1931.jpg" alt="Refund">
-      <img src="https://static.vecteezy.com/system/resources/previews/035/164/248/non_2x/truck-and-flames-silhouette-fast-delivery-icon-design-express-fast-moving-shipping-delivery-logo-illustration-vector.jpg" alt="Fast Shipping">
-    </div>
+/* NAV */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 25px;
+  border-bottom:2px solid #000;
+}
+header h1{
+  font-size:22px;
+  letter-spacing:2px;
+}
+header a{
+  text-decoration:none;
+  background:#000;
+  color:#fff;
+  padding:8px 16px;
+}
 
-    <h2>Premium Tech You Can Trust</h2>
-    <p>Explore best-in-class wireless earbuds, desk organizers, and life-saving accessories. Our team tests every product to make sure you get amazing quality with unbeatable prices — every time you shop with us.</p>
+/* HERO */
+.hero{
+  padding:80px 20px;
+  text-align:center;
+  background:#f4f4f4;
+}
+.hero h2{
+  font-size:36px;
+}
+.hero p{
+  margin:12px 0 25px;
+  color:#555;
+}
 
-    <a href="product2.html" class="cta">Shop Now</a>
+/* TIMER */
+.timer{
+  font-size:18px;
+  margin-top:15px;
+  color:#c00;
+  font-weight:600;
+}
 
-    <div class="features">
-      <h3>Why Choose Prime Picks?</h3>
-      <div class="features-grid">
-        <div class="feature-box"><span>🚀</span>Fast & Free Delivery Across India</div>
-        <div class="feature-box"><span>💯</span>High-Quality Clone Gadgets Tested by Experts</div>
-        <div class="feature-box"><span>🧾</span>Easy Checkout & Multiple Payment Options</div>
-        <div class="feature-box"><span>🔁</span>Hassle-Free Refund Guarantee</div>
-        <div class="feature-box"><span>🛠</span>Real Customer Reviews & 24/7 Support</div>
-        <div class="feature-box"><span>🛍</span>Trusted by 10,000+ Happy Shoppers</div>
-      </div>
-    </div>
-  </div>
+/* SHOP */
+.shop{
+  padding:50px 20px;
+  text-align:center;
+}
+.products{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin-top:30px;
+}
+.product{
+  border:1px solid #ddd;
+  padding:15px;
+}
+.product img{
+  width:100%;
+  height:350px;
+  object-fit:cover;
+}
+.product h4{
+  margin:10px 0 5px;
+}
+.product button{
+  margin-top:10px;
+  padding:10px;
+  width:100%;
+  background:#000;
+  color:#fff;
+  border:none;
+  cursor:pointer;
+}
 
-  <div class="footer-extra">
-    <div>
-      <img src="https://m.media-amazon.com/images/I/61SUj2aKoEL._AC_SL1500_.jpg" alt="Gadgets Store Logo">
-      <p><strong>Gadgets Store</strong></p>
-      <p>9891021424<br>gadgetsstore07@gmail.com<br>Shop No. 2, 824/1, Baba Colony, Sant Nagar, Delhi</p>
-    </div>
-  <div>
-  <h4>Information</h4>
-  <ul>
-    <li><a href="about.html">About Us</a></li>
-    <li><a href="privacy.html">Privacy Policy</a></li>
-    <li><a href="shipping.html">Shipping & Return Policy</a></li>
-    <li><a href="terms.html">Terms of Service</a></li>
-  </ul>
-</div>
-<div>
-  <h4>Useful Links</h4>
-  <ul>
-    <li><a href="track.html">Track Order</a></li>
-    <li><a href="account.html">My Account</a></li>
-    <li><a href="orders.html">Your Order Details</a></li>
-    <li><a href="contact2.html">Contact Us</a></li>
-  </ul>
-</div>
-    <div>
-      <h4>Customer Feedback</h4>
-      <p>748 reviews<br>Rating: <strong>4.34 / 5 ⭐</strong><br>What our clients say</p>
-    </div>
-  </div>
+/* PRODUCT DETAIL MODAL */
+.modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+.modal-content{
+  background:#fff;
+  max-width:900px;
+  width:90%;
+  padding:20px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:20px;
+}
+.modal img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+}
+.close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:28px;
+  color:#fff;
+  cursor:pointer;
+}
+.size-select{
+  margin:10px 0;
+}
+.size-select button{
+  margin-right:8px;
+  padding:6px 12px;
+  border:1px solid #000;
+  background:#fff;
+  cursor:pointer;
+}
 
-  <footer>
-    &copy; 2025 Prime Picks | Built by Yahya ❤️
-  </footer>
-</body>
-</html>
+/* FOOTER */
+footer{
+  margin-top:40px;
+  background:#f2f2f2;
+  padding:20px;
+  text-align:center;
+  font-size:14px;
+}
