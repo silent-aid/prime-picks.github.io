@@ -10,7 +10,7 @@
   margin:0;
   padding:0;
   box-sizing:border-box;
-  font-family:'Poppins',sans-serif;
+  font-family:Arial, Helvetica, sans-serif;
 }
 body{
   background:#fff;
@@ -26,7 +26,6 @@ header{
   border-bottom:2px solid #000;
 }
 header h1{
-  font-size:22px;
   letter-spacing:2px;
 }
 header a{
@@ -38,24 +37,23 @@ header a{
 
 /* HERO */
 .hero{
-  padding:80px 20px;
+  padding:70px 20px;
   text-align:center;
   background:#f4f4f4;
 }
 .hero h2{
-  font-size:36px;
+  font-size:34px;
 }
 .hero p{
-  margin:12px 0 25px;
+  margin:10px 0 15px;
   color:#555;
 }
 
 /* TIMER */
 .timer{
-  font-size:18px;
-  margin-top:15px;
   color:#c00;
-  font-weight:600;
+  font-weight:bold;
+  margin-top:10px;
 }
 
 /* SHOP */
@@ -65,7 +63,7 @@ header a{
 }
 .products{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:25px;
   margin-top:30px;
 }
@@ -91,7 +89,7 @@ header a{
   cursor:pointer;
 }
 
-/* PRODUCT DETAIL MODAL */
+/* MODAL */
 .modal{
   display:none;
   position:fixed;
@@ -103,8 +101,8 @@ header a{
 }
 .modal-content{
   background:#fff;
-  max-width:900px;
   width:90%;
+  max-width:900px;
   padding:20px;
   display:grid;
   grid-template-columns:1fr 1fr;
@@ -117,18 +115,15 @@ header a{
 }
 .close{
   position:absolute;
-  top:20px;
-  right:30px;
-  font-size:28px;
+  top:15px;
+  right:25px;
+  font-size:26px;
   color:#fff;
   cursor:pointer;
 }
-.size-select{
-  margin:10px 0;
-}
-.size-select button{
-  margin-right:8px;
+.size button{
   padding:6px 12px;
+  margin-right:8px;
   border:1px solid #000;
   background:#fff;
   cursor:pointer;
@@ -136,9 +131,110 @@ header a{
 
 /* FOOTER */
 footer{
-  margin-top:40px;
   background:#f2f2f2;
   padding:20px;
   text-align:center;
-  font-size:14px;
+  margin-top:40px;
 }
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>MQ THREADS</h1>
+  <a href="#shop">Shop Now</a>
+</header>
+
+<section class="hero">
+  <h2>Premium Streetwear for India 🇮🇳</h2>
+  <p>Minimal • Masculine • Made to Last</p>
+  <div class="timer" id="timer"></div>
+</section>
+
+<section id="shop" class="shop">
+  <h3>Best Sellers</h3>
+
+  <div class="products">
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" alt="Black Tee">
+      <h4>Oversized Black Tee</h4>
+      <p>₹999</p>
+      <button onclick="openProduct('Oversized Black Tee','999','https://images.unsplash.com/photo-1520975916090-3105956dac38')">View Product</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f" alt="White Tee">
+      <h4>Classic White Tee</h4>
+      <p>₹899</p>
+      <button onclick="openProduct('Classic White Tee','899','https://images.unsplash.com/photo-1512436991641-6745cdb1723f')">View Product</button>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRODUCT MODAL -->
+<div class="modal" id="modal">
+  <span class="close" onclick="closeModal()">✕</span>
+  <div class="modal-content">
+    <img id="modalImg">
+    <div>
+      <h2 id="modalTitle"></h2>
+      <p><b>Price:</b> ₹<span id="modalPrice"></span></p>
+      <p>Premium 200 GSM Cotton | Regular Fit</p>
+
+      <div class="size">
+        <p><b>Select Size</b></p>
+        <button>S</button><button>M</button><button>L</button><button>XL</button>
+      </div>
+
+      <br>
+      <button onclick="orderNow()" style="padding:12px;width:100%;background:#000;color:#fff;border:none;">
+        Order on WhatsApp (COD)
+      </button>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 MQ Threads India</p>
+  <p>Cash on Delivery | Pan India Shipping</p>
+</footer>
+
+<script>
+let currentProduct="", currentPrice="";
+
+function openProduct(name, price, img){
+  currentProduct=name;
+  currentPrice=price;
+  document.getElementById("modalTitle").innerText=name;
+  document.getElementById("modalPrice").innerText=price;
+  document.getElementById("modalImg").src=img;
+  document.getElementById("modal").style.display="flex";
+}
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+function orderNow(){
+  let phone="919121783895";
+  let msg=`Hi MQ Threads 👋%0AProduct: ${currentProduct}%0APrice: ₹${currentPrice}%0ASize: ___%0AAddress: ___%0APayment: COD`;
+  window.open(`https://wa.me/${phone}?text=${msg}`,"_blank");
+}
+
+/* COUNTDOWN TIMER */
+let end = new Date().getTime() + 6*60*60*1000;
+setInterval(()=>{
+  let now = new Date().getTime();
+  let d = end-now;
+  if(d<0){document.getElementById("timer").innerText="Sale Ended"; return;}
+  let h=Math.floor(d/(1000*60*60));
+  let m=Math.floor((d%(1000*60*60))/(1000*60));
+  let s=Math.floor((d%(1000*60))/1000);
+  document.getElementById("timer").innerText=
+    `Hurry! Sale ends in ${h}h ${m}m ${s}s`;
+},1000);
+</script>
+
+</body>
+</html>
